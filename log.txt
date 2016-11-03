@@ -1,0 +1,476 @@
+ -- START REGISTRATION PHASE -- 
+R0OC2LJ8
+R0OC2LJ8 starts registration phase
+R0OC2LJ8 generates fresh tags
+R0OC2LJ8 tag: 118186
+R0OC2LJ8 tag: 311549
+R0OC2LJ8 tag: 302501
+R0OC2LJ8 tag: 485034
+R0OC2LJ8 tag: 362292
+R0OC2LJ8 tag: 226883
+R0OC2LJ8 tag: 1285865
+R0OC2LJ8 tag: 274916
+R0OC2LJ8 tag: 200575
+R0OC2LJ8 tag: 1024072
+R0OC2LJ8 tag: 612680
+R0OC2LJ8 tag: 179568
+R0OC2LJ8 tag: 1027358
+R0OC2LJ8 tag: 1319392
+R0OC2LJ8 tag: 888080
+R0OC2LJ8 tag: 1164871
+R0OC2LJ8 tag: 552686
+R0OC2LJ8 tag: 420184
+R0OC2LJ8 tag: 831438
+R0OC2LJ8 tag: 912228
+R0OC2LJ8 tag: 1214851
+R0OC2LJ8 tag: 912950
+R0OC2LJ8 tag: 968851
+R0OC2LJ8 tag: 30479
+R0OC2LJ8 tag: 623846
+R0OC2LJ8 generates fresh keys
+R0OC2LJ8 key: 1339091
+R0OC2LJ8 generates opening keys for tags
+R0OC2LJ8 tag opening key: 273177
+R0OC2LJ8 tag opening key: 386378
+R0OC2LJ8 tag opening key: 337084
+R0OC2LJ8 tag opening key: 220773
+R0OC2LJ8 tag opening key: 625007
+R0OC2LJ8 tag opening key: 720992
+R0OC2LJ8 tag opening key: 414341
+R0OC2LJ8 tag opening key: 186188
+R0OC2LJ8 tag opening key: 1196528
+R0OC2LJ8 tag opening key: 2318
+R0OC2LJ8 tag opening key: 381912
+R0OC2LJ8 tag opening key: 244647
+R0OC2LJ8 tag opening key: 153730
+R0OC2LJ8 tag opening key: 905955
+R0OC2LJ8 tag opening key: 260871
+R0OC2LJ8 tag opening key: 470859
+R0OC2LJ8 tag opening key: 1137605
+R0OC2LJ8 tag opening key: 121571
+R0OC2LJ8 tag opening key: 761259
+R0OC2LJ8 tag opening key: 1244553
+R0OC2LJ8 tag opening key: 141091
+R0OC2LJ8 tag opening key: 302775
+R0OC2LJ8 tag opening key: 51447
+R0OC2LJ8 tag opening key: 693183
+R0OC2LJ8 tag opening key: 471674
+R0OC2LJ8 generate opening keys for keys
+R0OC2LJ8 key opening key: 1007245
+R0OC2LJ8 generates round package
+R0OC2LJ8 adds ID R0OC2LJ8 to round package
+R0OC2LJ8 adds round 0 to round package
+R0OC2LJ8 adds key ZModElement[1339091] to round package
+R0OC2LJ8 adds commit of crypted 118186 to round package
+R0OC2LJ8 adds commit of crypted 311549 to round package
+R0OC2LJ8 adds commit of crypted 302501 to round package
+R0OC2LJ8 adds commit of crypted 485034 to round package
+R0OC2LJ8 adds commit of crypted 362292 to round package
+R0OC2LJ8 adds commit of crypted 226883 to round package
+R0OC2LJ8 adds commit of crypted 1285865 to round package
+R0OC2LJ8 adds commit of crypted 274916 to round package
+R0OC2LJ8 adds commit of crypted 200575 to round package
+R0OC2LJ8 adds commit of crypted 1024072 to round package
+R0OC2LJ8 adds commit of crypted 612680 to round package
+R0OC2LJ8 adds commit of crypted 179568 to round package
+R0OC2LJ8 adds commit of crypted 1027358 to round package
+R0OC2LJ8 adds commit of crypted 1319392 to round package
+R0OC2LJ8 adds commit of crypted 888080 to round package
+R0OC2LJ8 adds commit of crypted 1164871 to round package
+R0OC2LJ8 adds commit of crypted 552686 to round package
+R0OC2LJ8 adds commit of crypted 420184 to round package
+R0OC2LJ8 adds commit of crypted 831438 to round package
+R0OC2LJ8 adds commit of crypted 912228 to round package
+R0OC2LJ8 adds commit of crypted 1214851 to round package
+R0OC2LJ8 adds commit of crypted 912950 to round package
+R0OC2LJ8 adds commit of crypted 968851 to round package
+R0OC2LJ8 adds commit of crypted 30479 to round package
+R0OC2LJ8 adds commit of crypted 623846 to round package
+R0OC2LJ8 send round package to service provider
+CLV5FBDV
+CLV5FBDV starts registration phase
+CLV5FBDV generates fresh tags
+CLV5FBDV tag: 339534
+CLV5FBDV tag: 99499
+CLV5FBDV tag: 27677
+CLV5FBDV tag: 718176
+CLV5FBDV tag: 632770
+CLV5FBDV tag: 819971
+CLV5FBDV tag: 866267
+CLV5FBDV tag: 789967
+CLV5FBDV tag: 47841
+CLV5FBDV tag: 6744
+CLV5FBDV tag: 186907
+CLV5FBDV tag: 1231207
+CLV5FBDV tag: 670048
+CLV5FBDV tag: 929620
+CLV5FBDV tag: 1033818
+CLV5FBDV tag: 952004
+CLV5FBDV tag: 1127401
+CLV5FBDV tag: 1111402
+CLV5FBDV tag: 1011921
+CLV5FBDV tag: 436979
+CLV5FBDV tag: 979231
+CLV5FBDV tag: 746745
+CLV5FBDV tag: 198501
+CLV5FBDV tag: 1228784
+CLV5FBDV tag: 110667
+CLV5FBDV generates fresh keys
+CLV5FBDV key: 1043731
+CLV5FBDV generates opening keys for tags
+CLV5FBDV tag opening key: 1266029
+CLV5FBDV tag opening key: 1101169
+CLV5FBDV tag opening key: 31020
+CLV5FBDV tag opening key: 879588
+CLV5FBDV tag opening key: 366152
+CLV5FBDV tag opening key: 838066
+CLV5FBDV tag opening key: 295709
+CLV5FBDV tag opening key: 281285
+CLV5FBDV tag opening key: 171481
+CLV5FBDV tag opening key: 1168794
+CLV5FBDV tag opening key: 175591
+CLV5FBDV tag opening key: 707651
+CLV5FBDV tag opening key: 175958
+CLV5FBDV tag opening key: 699568
+CLV5FBDV tag opening key: 408300
+CLV5FBDV tag opening key: 147590
+CLV5FBDV tag opening key: 562992
+CLV5FBDV tag opening key: 755614
+CLV5FBDV tag opening key: 697350
+CLV5FBDV tag opening key: 1079500
+CLV5FBDV tag opening key: 97622
+CLV5FBDV tag opening key: 1228234
+CLV5FBDV tag opening key: 724591
+CLV5FBDV tag opening key: 788126
+CLV5FBDV tag opening key: 344170
+CLV5FBDV generate opening keys for keys
+CLV5FBDV key opening key: 1103977
+CLV5FBDV generates round package
+CLV5FBDV adds ID CLV5FBDV to round package
+CLV5FBDV adds round 0 to round package
+CLV5FBDV adds key ZModElement[1043731] to round package
+CLV5FBDV adds commit of crypted 339534 to round package
+CLV5FBDV adds commit of crypted 99499 to round package
+CLV5FBDV adds commit of crypted 27677 to round package
+CLV5FBDV adds commit of crypted 718176 to round package
+CLV5FBDV adds commit of crypted 632770 to round package
+CLV5FBDV adds commit of crypted 819971 to round package
+CLV5FBDV adds commit of crypted 866267 to round package
+CLV5FBDV adds commit of crypted 789967 to round package
+CLV5FBDV adds commit of crypted 47841 to round package
+CLV5FBDV adds commit of crypted 6744 to round package
+CLV5FBDV adds commit of crypted 186907 to round package
+CLV5FBDV adds commit of crypted 1231207 to round package
+CLV5FBDV adds commit of crypted 670048 to round package
+CLV5FBDV adds commit of crypted 929620 to round package
+CLV5FBDV adds commit of crypted 1033818 to round package
+CLV5FBDV adds commit of crypted 952004 to round package
+CLV5FBDV adds commit of crypted 1127401 to round package
+CLV5FBDV adds commit of crypted 1111402 to round package
+CLV5FBDV adds commit of crypted 1011921 to round package
+CLV5FBDV adds commit of crypted 436979 to round package
+CLV5FBDV adds commit of crypted 979231 to round package
+CLV5FBDV adds commit of crypted 746745 to round package
+CLV5FBDV adds commit of crypted 198501 to round package
+CLV5FBDV adds commit of crypted 1228784 to round package
+CLV5FBDV adds commit of crypted 110667 to round package
+CLV5FBDV send round package to service provider
+JA1BFL2Q
+JA1BFL2Q starts registration phase
+JA1BFL2Q generates fresh tags
+JA1BFL2Q tag: 1042947
+JA1BFL2Q tag: 815175
+JA1BFL2Q tag: 1170496
+JA1BFL2Q tag: 1070666
+JA1BFL2Q tag: 296551
+JA1BFL2Q tag: 640048
+JA1BFL2Q tag: 274913
+JA1BFL2Q tag: 34478
+JA1BFL2Q tag: 1334991
+JA1BFL2Q tag: 1302511
+JA1BFL2Q tag: 441868
+JA1BFL2Q tag: 665648
+JA1BFL2Q tag: 877185
+JA1BFL2Q tag: 1108240
+JA1BFL2Q tag: 805629
+JA1BFL2Q tag: 872209
+JA1BFL2Q tag: 885623
+JA1BFL2Q tag: 326318
+JA1BFL2Q tag: 555093
+JA1BFL2Q tag: 778194
+JA1BFL2Q tag: 572783
+JA1BFL2Q tag: 1002489
+JA1BFL2Q tag: 1199071
+JA1BFL2Q tag: 1180959
+JA1BFL2Q tag: 594450
+JA1BFL2Q generates fresh keys
+JA1BFL2Q key: 940263
+JA1BFL2Q generates opening keys for tags
+JA1BFL2Q tag opening key: 60200
+JA1BFL2Q tag opening key: 194228
+JA1BFL2Q tag opening key: 1107874
+JA1BFL2Q tag opening key: 42343
+JA1BFL2Q tag opening key: 17327
+JA1BFL2Q tag opening key: 536545
+JA1BFL2Q tag opening key: 562611
+JA1BFL2Q tag opening key: 717772
+JA1BFL2Q tag opening key: 892429
+JA1BFL2Q tag opening key: 808561
+JA1BFL2Q tag opening key: 16443
+JA1BFL2Q tag opening key: 617757
+JA1BFL2Q tag opening key: 746116
+JA1BFL2Q tag opening key: 229824
+JA1BFL2Q tag opening key: 1183435
+JA1BFL2Q tag opening key: 414005
+JA1BFL2Q tag opening key: 115988
+JA1BFL2Q tag opening key: 790305
+JA1BFL2Q tag opening key: 1012911
+JA1BFL2Q tag opening key: 1309937
+JA1BFL2Q tag opening key: 1042028
+JA1BFL2Q tag opening key: 1209387
+JA1BFL2Q tag opening key: 876768
+JA1BFL2Q tag opening key: 410328
+JA1BFL2Q tag opening key: 1327902
+JA1BFL2Q generate opening keys for keys
+JA1BFL2Q key opening key: 100637
+JA1BFL2Q generates round package
+JA1BFL2Q adds ID JA1BFL2Q to round package
+JA1BFL2Q adds round 0 to round package
+JA1BFL2Q adds key ZModElement[940263] to round package
+JA1BFL2Q adds commit of crypted 1042947 to round package
+JA1BFL2Q adds commit of crypted 815175 to round package
+JA1BFL2Q adds commit of crypted 1170496 to round package
+JA1BFL2Q adds commit of crypted 1070666 to round package
+JA1BFL2Q adds commit of crypted 296551 to round package
+JA1BFL2Q adds commit of crypted 640048 to round package
+JA1BFL2Q adds commit of crypted 274913 to round package
+JA1BFL2Q adds commit of crypted 34478 to round package
+JA1BFL2Q adds commit of crypted 1334991 to round package
+JA1BFL2Q adds commit of crypted 1302511 to round package
+JA1BFL2Q adds commit of crypted 441868 to round package
+JA1BFL2Q adds commit of crypted 665648 to round package
+JA1BFL2Q adds commit of crypted 877185 to round package
+JA1BFL2Q adds commit of crypted 1108240 to round package
+JA1BFL2Q adds commit of crypted 805629 to round package
+JA1BFL2Q adds commit of crypted 872209 to round package
+JA1BFL2Q adds commit of crypted 885623 to round package
+JA1BFL2Q adds commit of crypted 326318 to round package
+JA1BFL2Q adds commit of crypted 555093 to round package
+JA1BFL2Q adds commit of crypted 778194 to round package
+JA1BFL2Q adds commit of crypted 572783 to round package
+JA1BFL2Q adds commit of crypted 1002489 to round package
+JA1BFL2Q adds commit of crypted 1199071 to round package
+JA1BFL2Q adds commit of crypted 1180959 to round package
+JA1BFL2Q adds commit of crypted 594450 to round package
+JA1BFL2Q send round package to service provider
+B4AHA3E4
+B4AHA3E4 starts registration phase
+B4AHA3E4 generates fresh tags
+B4AHA3E4 tag: 580979
+B4AHA3E4 tag: 542142
+B4AHA3E4 tag: 127403
+B4AHA3E4 tag: 426850
+B4AHA3E4 tag: 369660
+B4AHA3E4 tag: 332948
+B4AHA3E4 tag: 1053897
+B4AHA3E4 tag: 534416
+B4AHA3E4 tag: 370724
+B4AHA3E4 tag: 501000
+B4AHA3E4 tag: 241364
+B4AHA3E4 tag: 464298
+B4AHA3E4 tag: 479507
+B4AHA3E4 tag: 794163
+B4AHA3E4 tag: 577230
+B4AHA3E4 tag: 1095746
+B4AHA3E4 tag: 1249264
+B4AHA3E4 tag: 889920
+B4AHA3E4 tag: 266152
+B4AHA3E4 tag: 1002131
+B4AHA3E4 tag: 935132
+B4AHA3E4 tag: 927359
+B4AHA3E4 tag: 31643
+B4AHA3E4 tag: 1155580
+B4AHA3E4 tag: 430385
+B4AHA3E4 generates fresh keys
+B4AHA3E4 key: 81662
+B4AHA3E4 generates opening keys for tags
+B4AHA3E4 tag opening key: 362568
+B4AHA3E4 tag opening key: 430343
+B4AHA3E4 tag opening key: 124996
+B4AHA3E4 tag opening key: 547092
+B4AHA3E4 tag opening key: 723877
+B4AHA3E4 tag opening key: 1276199
+B4AHA3E4 tag opening key: 412435
+B4AHA3E4 tag opening key: 532871
+B4AHA3E4 tag opening key: 120842
+B4AHA3E4 tag opening key: 643299
+B4AHA3E4 tag opening key: 66146
+B4AHA3E4 tag opening key: 1130195
+B4AHA3E4 tag opening key: 1322360
+B4AHA3E4 tag opening key: 1022797
+B4AHA3E4 tag opening key: 1084269
+B4AHA3E4 tag opening key: 333068
+B4AHA3E4 tag opening key: 416814
+B4AHA3E4 tag opening key: 638342
+B4AHA3E4 tag opening key: 273706
+B4AHA3E4 tag opening key: 1009066
+B4AHA3E4 tag opening key: 261984
+B4AHA3E4 tag opening key: 826109
+B4AHA3E4 tag opening key: 793707
+B4AHA3E4 tag opening key: 1035157
+B4AHA3E4 tag opening key: 508637
+B4AHA3E4 generate opening keys for keys
+B4AHA3E4 key opening key: 904942
+B4AHA3E4 generates round package
+B4AHA3E4 adds ID B4AHA3E4 to round package
+B4AHA3E4 adds round 0 to round package
+B4AHA3E4 adds key ZModElement[81662] to round package
+B4AHA3E4 adds commit of crypted 580979 to round package
+B4AHA3E4 adds commit of crypted 542142 to round package
+B4AHA3E4 adds commit of crypted 127403 to round package
+B4AHA3E4 adds commit of crypted 426850 to round package
+B4AHA3E4 adds commit of crypted 369660 to round package
+B4AHA3E4 adds commit of crypted 332948 to round package
+B4AHA3E4 adds commit of crypted 1053897 to round package
+B4AHA3E4 adds commit of crypted 534416 to round package
+B4AHA3E4 adds commit of crypted 370724 to round package
+B4AHA3E4 adds commit of crypted 501000 to round package
+B4AHA3E4 adds commit of crypted 241364 to round package
+B4AHA3E4 adds commit of crypted 464298 to round package
+B4AHA3E4 adds commit of crypted 479507 to round package
+B4AHA3E4 adds commit of crypted 794163 to round package
+B4AHA3E4 adds commit of crypted 577230 to round package
+B4AHA3E4 adds commit of crypted 1095746 to round package
+B4AHA3E4 adds commit of crypted 1249264 to round package
+B4AHA3E4 adds commit of crypted 889920 to round package
+B4AHA3E4 adds commit of crypted 266152 to round package
+B4AHA3E4 adds commit of crypted 1002131 to round package
+B4AHA3E4 adds commit of crypted 935132 to round package
+B4AHA3E4 adds commit of crypted 927359 to round package
+B4AHA3E4 adds commit of crypted 31643 to round package
+B4AHA3E4 adds commit of crypted 1155580 to round package
+B4AHA3E4 adds commit of crypted 430385 to round package
+B4AHA3E4 send round package to service provider
+IE2NJ52L
+IE2NJ52L starts registration phase
+IE2NJ52L generates fresh tags
+IE2NJ52L tag: 227764
+IE2NJ52L tag: 1131906
+IE2NJ52L tag: 349485
+IE2NJ52L tag: 1105143
+IE2NJ52L tag: 373668
+IE2NJ52L tag: 935919
+IE2NJ52L tag: 500845
+IE2NJ52L tag: 586190
+IE2NJ52L tag: 796351
+IE2NJ52L tag: 1174308
+IE2NJ52L tag: 676059
+IE2NJ52L tag: 850864
+IE2NJ52L tag: 715602
+IE2NJ52L tag: 1090863
+IE2NJ52L tag: 850164
+IE2NJ52L tag: 612111
+IE2NJ52L tag: 101232
+IE2NJ52L tag: 466100
+IE2NJ52L tag: 863858
+IE2NJ52L tag: 1213567
+IE2NJ52L tag: 397023
+IE2NJ52L tag: 17878
+IE2NJ52L tag: 704336
+IE2NJ52L tag: 389804
+IE2NJ52L tag: 1172979
+IE2NJ52L generates fresh keys
+IE2NJ52L key: 416655
+IE2NJ52L generates opening keys for tags
+IE2NJ52L tag opening key: 1077161
+IE2NJ52L tag opening key: 408507
+IE2NJ52L tag opening key: 1133602
+IE2NJ52L tag opening key: 577334
+IE2NJ52L tag opening key: 38829
+IE2NJ52L tag opening key: 1218619
+IE2NJ52L tag opening key: 354857
+IE2NJ52L tag opening key: 1008778
+IE2NJ52L tag opening key: 578405
+IE2NJ52L tag opening key: 330501
+IE2NJ52L tag opening key: 678365
+IE2NJ52L tag opening key: 980976
+IE2NJ52L tag opening key: 650533
+IE2NJ52L tag opening key: 1282506
+IE2NJ52L tag opening key: 74439
+IE2NJ52L tag opening key: 669755
+IE2NJ52L tag opening key: 957847
+IE2NJ52L tag opening key: 643672
+IE2NJ52L tag opening key: 68571
+IE2NJ52L tag opening key: 101260
+IE2NJ52L tag opening key: 256618
+IE2NJ52L tag opening key: 107919
+IE2NJ52L tag opening key: 1290634
+IE2NJ52L tag opening key: 278252
+IE2NJ52L tag opening key: 844229
+IE2NJ52L generate opening keys for keys
+IE2NJ52L key opening key: 305975
+IE2NJ52L generates round package
+IE2NJ52L adds ID IE2NJ52L to round package
+IE2NJ52L adds round 0 to round package
+IE2NJ52L adds key ZModElement[416655] to round package
+IE2NJ52L adds commit of crypted 227764 to round package
+IE2NJ52L adds commit of crypted 1131906 to round package
+IE2NJ52L adds commit of crypted 349485 to round package
+IE2NJ52L adds commit of crypted 1105143 to round package
+IE2NJ52L adds commit of crypted 373668 to round package
+IE2NJ52L adds commit of crypted 935919 to round package
+IE2NJ52L adds commit of crypted 500845 to round package
+IE2NJ52L adds commit of crypted 586190 to round package
+IE2NJ52L adds commit of crypted 796351 to round package
+IE2NJ52L adds commit of crypted 1174308 to round package
+IE2NJ52L adds commit of crypted 676059 to round package
+IE2NJ52L adds commit of crypted 850864 to round package
+IE2NJ52L adds commit of crypted 715602 to round package
+IE2NJ52L adds commit of crypted 1090863 to round package
+IE2NJ52L adds commit of crypted 850164 to round package
+IE2NJ52L adds commit of crypted 612111 to round package
+IE2NJ52L adds commit of crypted 101232 to round package
+IE2NJ52L adds commit of crypted 466100 to round package
+IE2NJ52L adds commit of crypted 863858 to round package
+IE2NJ52L adds commit of crypted 1213567 to round package
+IE2NJ52L adds commit of crypted 397023 to round package
+IE2NJ52L adds commit of crypted 17878 to round package
+IE2NJ52L adds commit of crypted 704336 to round package
+IE2NJ52L adds commit of crypted 389804 to round package
+IE2NJ52L adds commit of crypted 1172979 to round package
+IE2NJ52L send round package to service provider
+ -- END REGISTRATION PHASE -- 
+ -- START DRIVING PHASE -- 
+R0OC2LJ8 is driving. Tag 302501 (161, 15) - Thu Nov 03 09:20:07 UTC 2016
+R0OC2LJ8 is driving. Tag 1164871 (65, 59) - Thu Nov 03 09:20:07 UTC 2016
+R0OC2LJ8 is driving. Tag 274916 (141, 49) - Thu Nov 03 09:20:07 UTC 2016
+R0OC2LJ8 is driving. Tag 1164871 (121, 32) - Thu Nov 03 09:20:07 UTC 2016
+R0OC2LJ8 is driving. Tag 30479 (30, 52) - Thu Nov 03 09:20:07 UTC 2016
+R0OC2LJ8 is driving. Tag 1285865 (31, 31) - Thu Nov 03 09:20:07 UTC 2016
+R0OC2LJ8 is driving. Tag 623846 (108, 10) - Thu Nov 03 09:20:07 UTC 2016
+R0OC2LJ8 is driving. Tag 552686 (113, 27) - Thu Nov 03 09:20:07 UTC 2016
+R0OC2LJ8 is driving. Tag 118186 (116, 41) - Thu Nov 03 09:20:07 UTC 2016
+CLV5FBDV is driving. Tag 1033818 (146, 45) - Thu Nov 03 09:20:07 UTC 2016
+CLV5FBDV is driving. Tag 436979 (69, 39) - Thu Nov 03 09:20:07 UTC 2016
+CLV5FBDV is driving. Tag 789967 (89, 7) - Thu Nov 03 09:20:07 UTC 2016
+CLV5FBDV is driving. Tag 929620 (34, 17) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 1334991 (136, 41) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 326318 (87, 41) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 1302511 (38, 26) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 1199071 (97, 62) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 34478 (113, 40) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 665648 (154, 62) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 274913 (40, 10) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 1170496 (64, 45) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 665648 (61, 75) - Thu Nov 03 09:20:07 UTC 2016
+JA1BFL2Q is driving. Tag 1002489 (58, 62) - Thu Nov 03 09:20:07 UTC 2016
+B4AHA3E4 is driving. Tag 542142 (180, 3) - Thu Nov 03 09:20:07 UTC 2016
+B4AHA3E4 is driving. Tag 332948 (141, 1) - Thu Nov 03 09:20:07 UTC 2016
+B4AHA3E4 is driving. Tag 426850 (14, 79) - Thu Nov 03 09:20:07 UTC 2016
+B4AHA3E4 is driving. Tag 31643 (160, 63) - Thu Nov 03 09:20:07 UTC 2016
+B4AHA3E4 is driving. Tag 426850 (17, 9) - Thu Nov 03 09:20:07 UTC 2016
+IE2NJ52L is driving. Tag 715602 (97, 16) - Thu Nov 03 09:20:07 UTC 2016
+IE2NJ52L is driving. Tag 850864 (62, 80) - Thu Nov 03 09:20:07 UTC 2016
+ -- END DRIVING PHASE -- 
+ -- START RECONCILIATION PHASE -- 
+ -- END RECONCILIATION PHASE -- 
