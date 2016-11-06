@@ -7,7 +7,6 @@ package ch.bfh.ti.hutzf1.vpriv_client;
 
 import ch.bfh.ti.hutzf1.vpriv_client.crypto.OneWayFunction;
 import ch.bfh.ti.hutzf1.vpriv_client.crypto.PedersenScheme;
-//import ch.bfh.ti.hutzf1.vpriv.serviceprovider.ServiceProvider;
 import ch.bfh.ti.hutzf1.vpriv_client.vehicle.Vehicle;
 import ch.bfh.ti.hutzf1.vpriv_client.log.Log;
 import java.io.IOException;
@@ -74,7 +73,7 @@ public class Main {
         log.both(" -- START RECONCILIATION PHASE -- ");
         
         for (Vehicle vehicle : vehicles) {
-            //vehicle.reconciliation();         
+            vehicle.reconciliation();         
         }
         
         log.both(" -- END RECONCILIATION PHASE -- ");

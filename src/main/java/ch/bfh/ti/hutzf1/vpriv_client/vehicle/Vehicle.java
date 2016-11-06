@@ -137,6 +137,7 @@ public final class Vehicle {
         
         // Generate round package to send data to service provider
         JSONObject roundPackage = new JSONObject();
+        roundPackage.put("type", "roundpackage");
         log.file(ID + " generates round package");
         
         roundPackage.put("id", ID);
@@ -166,34 +167,46 @@ public final class Vehicle {
         Location currentLocation = new Location();
         Date timestamp = new Date();
         Element randomTag = this.getRandomTag();
-        JSONObject drivingDate = new JSONObject();
-        drivingDate.put("tag", randomTag);
-        drivingDate.put("location", currentLocation);
-        drivingDate.put("timestamp", timestamp);
+        JSONObject drivingData = new JSONObject();
+        drivingData.put("type", "drivingdata");
+        drivingData.put("tag", randomTag);
+        drivingData.put("longitude", currentLocation.LONGITUDE);
+        drivingData.put("latitude", currentLocation.LATIDUDE);
+        drivingData.put("timestamp", timestamp);
         
+        de.putDrivingData(drivingData);
         //int toll = sp.putDrivingData(randomTag, currentLocation, timestamp);
         
         log.both(ID + " is driving. Tag " + randomTag.getValue() + " (" + currentLocation.LATIDUDE + ", " + currentLocation.LONGITUDE + ") - " + timestamp);
         //log.file(ID + " value of a toll station is " + toll);
     }
 
-    /*public void reconciliation() throws IOException {
+    public void reconciliation() throws IOException {
         int c = 0;
         int bi;
         Element Di = ps.getOpeningKey();
         
-        ArrayList<DrivingTuple> W = sp.getAllTags();
-        PermutatedPackage Ui = new PermutatedPackage();
+        JSONObject W = de.getAllData();
+        JSONObject costData = new JSONObject();
+
+        
+        //ArrayList<DrivingTuple> W = sp.getAllTags();
+        //PermutatedPackage Ui = new PermutatedPackage();
         
         log.file(ID + " is calculating cost...");
-        for (DrivingTuple dr : W) {
+        /*for (DrivingTuple dr : W) {
             if(TAGS.contains(dr.tag)) {
                 c += dr.cost.convertToBigInteger().intValue();
             }   
-        }
+        }*/
         log.both(ID + " calculated " + c);
-        sp.putCostData(ID, c);
+        costData.put("type", "costdata");
+        costData.put("id", ID);
+        costData.put("cost", c);
+        //sp.putCostData(ID, c);
+        de.putCostData(costData);
         
+        /*
         // Send permutated data to service provider
         // Permute todo!
         
@@ -227,6 +240,6 @@ public final class Vehicle {
         }
         else if(bi == 1){
             log.both(ID + " service provider calculated " + sp.calculate1(ID, DV, Di));
-        }
-    }*/
+        }*/
+    }
 }
