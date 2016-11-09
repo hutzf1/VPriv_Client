@@ -10,6 +10,8 @@ import ch.bfh.ti.hutzf1.vpriv_client.crypto.PedersenScheme;
 import ch.bfh.ti.hutzf1.vpriv_client.vehicle.Vehicle;
 import ch.bfh.ti.hutzf1.vpriv_client.log.Log;
 import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,12 +22,11 @@ import java.util.Random;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException, InvalidKeyException, InterruptedException {
         
         PedersenScheme ps = new PedersenScheme();
         Log log = new Log();
         OneWayFunction hash = new OneWayFunction();
-        //ServiceProvider sp = new ServiceProvider(ps, log, hash);
 
         // Variables
         int numberOfVehicles = 5;
@@ -45,7 +46,6 @@ public class Main {
         // Generate Vehicles
         ArrayList<Vehicle> vehicles = new ArrayList<>();
         for (int x = 0; i < numberOfVehicles; i++) {
-            //Vehicle newVehicle = new Vehicle(sp, ps, hash, log, n, s);
             Vehicle newVehicle = new Vehicle(ps, hash, log, n, s);
             vehicles.add(newVehicle);
         }
@@ -56,6 +56,7 @@ public class Main {
         // DRIVING PHASE //
         ///////////////////
         
+        Thread.sleep(3000);
         log.both(" -- START DRIVING PHASE -- ");
         
         for (Vehicle vehicle : vehicles) {
@@ -70,6 +71,7 @@ public class Main {
         // RECONCILIATION PHASE //
         //////////////////////////
         
+        Thread.sleep(3000);
         log.both(" -- START RECONCILIATION PHASE -- ");
         
         for (Vehicle vehicle : vehicles) {

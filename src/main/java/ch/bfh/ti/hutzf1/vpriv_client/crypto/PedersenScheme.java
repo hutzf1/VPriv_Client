@@ -10,6 +10,7 @@ import ch.bfh.unicrypt.math.algebra.general.classes.BooleanElement;
 import ch.bfh.unicrypt.math.algebra.general.interfaces.CyclicGroup;
 import ch.bfh.unicrypt.math.algebra.general.interfaces.Element;
 import ch.bfh.unicrypt.math.algebra.multiplicative.classes.GStarModSafePrime;
+import java.math.BigInteger;
 
 /**
  *
@@ -36,6 +37,10 @@ public class PedersenScheme {
     }
     
     public Element getElement(int value) {
+        return COMMITMENTSCHEME.getMessageSpace().getElement(value);
+    }
+    
+    public Element getElement(BigInteger value) {
         return COMMITMENTSCHEME.getMessageSpace().getElement(value);
     }
     

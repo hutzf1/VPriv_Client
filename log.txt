@@ -1,0 +1,467 @@
+ -- START REGISTRATION PHASE -- 
+A43MW5ET
+A43MW5ET starts registration phase
+A43MW5ET generates fresh tags
+A43MW5ET tag: 347659
+A43MW5ET tag: 861079
+A43MW5ET tag: 315692
+A43MW5ET tag: 888744
+A43MW5ET tag: 1185341
+A43MW5ET tag: 589983
+A43MW5ET tag: 140472
+A43MW5ET tag: 984304
+A43MW5ET tag: 114884
+A43MW5ET tag: 942476
+A43MW5ET tag: 1144585
+A43MW5ET tag: 147672
+A43MW5ET tag: 350815
+A43MW5ET tag: 1146519
+A43MW5ET tag: 1201107
+A43MW5ET tag: 785362
+A43MW5ET tag: 820038
+A43MW5ET tag: 885850
+A43MW5ET tag: 265411
+A43MW5ET tag: 1250043
+A43MW5ET tag: 819024
+A43MW5ET tag: 914585
+A43MW5ET tag: 178731
+A43MW5ET tag: 775717
+A43MW5ET tag: 135149
+A43MW5ET generates fresh keys
+A43MW5ET key: 1033640
+A43MW5ET generates opening keys for tags
+A43MW5ET tag opening key: 397165
+A43MW5ET tag opening key: 318584
+A43MW5ET tag opening key: 377520
+A43MW5ET tag opening key: 205059
+A43MW5ET tag opening key: 5320
+A43MW5ET tag opening key: 259870
+A43MW5ET tag opening key: 354511
+A43MW5ET tag opening key: 833281
+A43MW5ET tag opening key: 1076645
+A43MW5ET tag opening key: 1073880
+A43MW5ET tag opening key: 119511
+A43MW5ET tag opening key: 256080
+A43MW5ET tag opening key: 574348
+A43MW5ET tag opening key: 1032949
+A43MW5ET tag opening key: 1135933
+A43MW5ET tag opening key: 340882
+A43MW5ET tag opening key: 1094613
+A43MW5ET tag opening key: 690440
+A43MW5ET tag opening key: 1348083
+A43MW5ET tag opening key: 1118432
+A43MW5ET tag opening key: 922636
+A43MW5ET tag opening key: 1024843
+A43MW5ET tag opening key: 229440
+A43MW5ET tag opening key: 762502
+A43MW5ET tag opening key: 911024
+A43MW5ET generate opening keys for keys
+A43MW5ET key opening key: 1241186
+A43MW5ET generates round package
+A43MW5ET adds ID A43MW5ET to round package
+A43MW5ET adds round 0 to round package
+A43MW5ET adds key 1033640 to round package
+A43MW5ET adds commit of crypted 347659 to round package
+A43MW5ET adds commit of crypted 861079 to round package
+A43MW5ET adds commit of crypted 315692 to round package
+A43MW5ET adds commit of crypted 888744 to round package
+A43MW5ET adds commit of crypted 1185341 to round package
+A43MW5ET adds commit of crypted 589983 to round package
+A43MW5ET adds commit of crypted 140472 to round package
+A43MW5ET adds commit of crypted 984304 to round package
+A43MW5ET adds commit of crypted 114884 to round package
+A43MW5ET adds commit of crypted 942476 to round package
+A43MW5ET adds commit of crypted 1144585 to round package
+A43MW5ET adds commit of crypted 147672 to round package
+A43MW5ET adds commit of crypted 350815 to round package
+A43MW5ET adds commit of crypted 1146519 to round package
+A43MW5ET adds commit of crypted 1201107 to round package
+A43MW5ET adds commit of crypted 785362 to round package
+A43MW5ET adds commit of crypted 820038 to round package
+A43MW5ET adds commit of crypted 885850 to round package
+A43MW5ET adds commit of crypted 265411 to round package
+A43MW5ET adds commit of crypted 1250043 to round package
+A43MW5ET adds commit of crypted 819024 to round package
+A43MW5ET adds commit of crypted 914585 to round package
+A43MW5ET adds commit of crypted 178731 to round package
+A43MW5ET adds commit of crypted 775717 to round package
+A43MW5ET adds commit of crypted 135149 to round package
+A43MW5ET send round package to service provider
+II95C795
+II95C795 starts registration phase
+II95C795 generates fresh tags
+II95C795 tag: 149654
+II95C795 tag: 916776
+II95C795 tag: 932552
+II95C795 tag: 331124
+II95C795 tag: 632561
+II95C795 tag: 422622
+II95C795 tag: 833261
+II95C795 tag: 822331
+II95C795 tag: 1305043
+II95C795 tag: 720422
+II95C795 tag: 649088
+II95C795 tag: 307284
+II95C795 tag: 1049020
+II95C795 tag: 867813
+II95C795 tag: 1223621
+II95C795 tag: 85069
+II95C795 tag: 1079411
+II95C795 tag: 1046609
+II95C795 tag: 342711
+II95C795 tag: 1266005
+II95C795 tag: 1249556
+II95C795 tag: 1118443
+II95C795 tag: 1105345
+II95C795 tag: 910577
+II95C795 tag: 165740
+II95C795 generates fresh keys
+II95C795 key: 794740
+II95C795 generates opening keys for tags
+II95C795 tag opening key: 599816
+II95C795 tag opening key: 351875
+II95C795 tag opening key: 1078484
+II95C795 tag opening key: 465115
+II95C795 tag opening key: 1202448
+II95C795 tag opening key: 1001474
+II95C795 tag opening key: 669933
+II95C795 tag opening key: 1317707
+II95C795 tag opening key: 475354
+II95C795 tag opening key: 715760
+II95C795 tag opening key: 458992
+II95C795 tag opening key: 1060335
+II95C795 tag opening key: 37621
+II95C795 tag opening key: 660631
+II95C795 tag opening key: 431117
+II95C795 tag opening key: 981655
+II95C795 tag opening key: 670140
+II95C795 tag opening key: 1199257
+II95C795 tag opening key: 284004
+II95C795 tag opening key: 557799
+II95C795 tag opening key: 1198996
+II95C795 tag opening key: 311375
+II95C795 tag opening key: 1105943
+II95C795 tag opening key: 1019100
+II95C795 tag opening key: 424786
+II95C795 generate opening keys for keys
+II95C795 key opening key: 1069387
+II95C795 generates round package
+II95C795 adds ID II95C795 to round package
+II95C795 adds round 0 to round package
+II95C795 adds key 794740 to round package
+II95C795 adds commit of crypted 149654 to round package
+II95C795 adds commit of crypted 916776 to round package
+II95C795 adds commit of crypted 932552 to round package
+II95C795 adds commit of crypted 331124 to round package
+II95C795 adds commit of crypted 632561 to round package
+II95C795 adds commit of crypted 422622 to round package
+II95C795 adds commit of crypted 833261 to round package
+II95C795 adds commit of crypted 822331 to round package
+II95C795 adds commit of crypted 1305043 to round package
+II95C795 adds commit of crypted 720422 to round package
+II95C795 adds commit of crypted 649088 to round package
+II95C795 adds commit of crypted 307284 to round package
+II95C795 adds commit of crypted 1049020 to round package
+II95C795 adds commit of crypted 867813 to round package
+II95C795 adds commit of crypted 1223621 to round package
+II95C795 adds commit of crypted 85069 to round package
+II95C795 adds commit of crypted 1079411 to round package
+II95C795 adds commit of crypted 1046609 to round package
+II95C795 adds commit of crypted 342711 to round package
+II95C795 adds commit of crypted 1266005 to round package
+II95C795 adds commit of crypted 1249556 to round package
+II95C795 adds commit of crypted 1118443 to round package
+II95C795 adds commit of crypted 1105345 to round package
+II95C795 adds commit of crypted 910577 to round package
+II95C795 adds commit of crypted 165740 to round package
+II95C795 send round package to service provider
+ASBFBCUU
+ASBFBCUU starts registration phase
+ASBFBCUU generates fresh tags
+ASBFBCUU tag: 1287840
+ASBFBCUU tag: 514146
+ASBFBCUU tag: 731774
+ASBFBCUU tag: 967830
+ASBFBCUU tag: 1317412
+ASBFBCUU tag: 308670
+ASBFBCUU tag: 85174
+ASBFBCUU tag: 1255279
+ASBFBCUU tag: 366711
+ASBFBCUU tag: 1042931
+ASBFBCUU tag: 894419
+ASBFBCUU tag: 141343
+ASBFBCUU tag: 401579
+ASBFBCUU tag: 1022710
+ASBFBCUU tag: 511802
+ASBFBCUU tag: 1334251
+ASBFBCUU tag: 953190
+ASBFBCUU tag: 736474
+ASBFBCUU tag: 814175
+ASBFBCUU tag: 656528
+ASBFBCUU tag: 1011754
+ASBFBCUU tag: 649698
+ASBFBCUU tag: 422015
+ASBFBCUU tag: 4182
+ASBFBCUU tag: 425973
+ASBFBCUU generates fresh keys
+ASBFBCUU key: 604858
+ASBFBCUU generates opening keys for tags
+ASBFBCUU tag opening key: 1243861
+ASBFBCUU tag opening key: 1166516
+ASBFBCUU tag opening key: 15773
+ASBFBCUU tag opening key: 1228839
+ASBFBCUU tag opening key: 293009
+ASBFBCUU tag opening key: 230870
+ASBFBCUU tag opening key: 862132
+ASBFBCUU tag opening key: 500266
+ASBFBCUU tag opening key: 1326938
+ASBFBCUU tag opening key: 1334030
+ASBFBCUU tag opening key: 284718
+ASBFBCUU tag opening key: 66078
+ASBFBCUU tag opening key: 338792
+ASBFBCUU tag opening key: 823794
+ASBFBCUU tag opening key: 217684
+ASBFBCUU tag opening key: 988825
+ASBFBCUU tag opening key: 765972
+ASBFBCUU tag opening key: 17504
+ASBFBCUU tag opening key: 1229104
+ASBFBCUU tag opening key: 529774
+ASBFBCUU tag opening key: 946809
+ASBFBCUU tag opening key: 200888
+ASBFBCUU tag opening key: 353904
+ASBFBCUU tag opening key: 664387
+ASBFBCUU tag opening key: 530371
+ASBFBCUU generate opening keys for keys
+ASBFBCUU key opening key: 167484
+ASBFBCUU generates round package
+ASBFBCUU adds ID ASBFBCUU to round package
+ASBFBCUU adds round 0 to round package
+ASBFBCUU adds key 604858 to round package
+ASBFBCUU adds commit of crypted 1287840 to round package
+ASBFBCUU adds commit of crypted 514146 to round package
+ASBFBCUU adds commit of crypted 731774 to round package
+ASBFBCUU adds commit of crypted 967830 to round package
+ASBFBCUU adds commit of crypted 1317412 to round package
+ASBFBCUU adds commit of crypted 308670 to round package
+ASBFBCUU adds commit of crypted 85174 to round package
+ASBFBCUU adds commit of crypted 1255279 to round package
+ASBFBCUU adds commit of crypted 366711 to round package
+ASBFBCUU adds commit of crypted 1042931 to round package
+ASBFBCUU adds commit of crypted 894419 to round package
+ASBFBCUU adds commit of crypted 141343 to round package
+ASBFBCUU adds commit of crypted 401579 to round package
+ASBFBCUU adds commit of crypted 1022710 to round package
+ASBFBCUU adds commit of crypted 511802 to round package
+ASBFBCUU adds commit of crypted 1334251 to round package
+ASBFBCUU adds commit of crypted 953190 to round package
+ASBFBCUU adds commit of crypted 736474 to round package
+ASBFBCUU adds commit of crypted 814175 to round package
+ASBFBCUU adds commit of crypted 656528 to round package
+ASBFBCUU adds commit of crypted 1011754 to round package
+ASBFBCUU adds commit of crypted 649698 to round package
+ASBFBCUU adds commit of crypted 422015 to round package
+ASBFBCUU adds commit of crypted 4182 to round package
+ASBFBCUU adds commit of crypted 425973 to round package
+ASBFBCUU send round package to service provider
+LTLVV4KP
+LTLVV4KP starts registration phase
+LTLVV4KP generates fresh tags
+LTLVV4KP tag: 53631
+LTLVV4KP tag: 1202048
+LTLVV4KP tag: 483453
+LTLVV4KP tag: 815928
+LTLVV4KP tag: 1029808
+LTLVV4KP tag: 425535
+LTLVV4KP tag: 760885
+LTLVV4KP tag: 1293257
+LTLVV4KP tag: 729403
+LTLVV4KP tag: 347447
+LTLVV4KP tag: 615530
+LTLVV4KP tag: 575564
+LTLVV4KP tag: 863326
+LTLVV4KP tag: 742511
+LTLVV4KP tag: 787226
+LTLVV4KP tag: 1168329
+LTLVV4KP tag: 694866
+LTLVV4KP tag: 110746
+LTLVV4KP tag: 826945
+LTLVV4KP tag: 818228
+LTLVV4KP tag: 1214715
+LTLVV4KP tag: 967637
+LTLVV4KP tag: 1106713
+LTLVV4KP tag: 1108329
+LTLVV4KP tag: 1088512
+LTLVV4KP generates fresh keys
+LTLVV4KP key: 1303765
+LTLVV4KP generates opening keys for tags
+LTLVV4KP tag opening key: 355132
+LTLVV4KP tag opening key: 912423
+LTLVV4KP tag opening key: 774945
+LTLVV4KP tag opening key: 1172783
+LTLVV4KP tag opening key: 1083987
+LTLVV4KP tag opening key: 559794
+LTLVV4KP tag opening key: 39252
+LTLVV4KP tag opening key: 1009548
+LTLVV4KP tag opening key: 717760
+LTLVV4KP tag opening key: 1317135
+LTLVV4KP tag opening key: 44282
+LTLVV4KP tag opening key: 1070679
+LTLVV4KP tag opening key: 943166
+LTLVV4KP tag opening key: 523423
+LTLVV4KP tag opening key: 636039
+LTLVV4KP tag opening key: 990936
+LTLVV4KP tag opening key: 1203492
+LTLVV4KP tag opening key: 819598
+LTLVV4KP tag opening key: 1244496
+LTLVV4KP tag opening key: 173544
+LTLVV4KP tag opening key: 714936
+LTLVV4KP tag opening key: 897602
+LTLVV4KP tag opening key: 945888
+LTLVV4KP tag opening key: 1335283
+LTLVV4KP tag opening key: 532115
+LTLVV4KP generate opening keys for keys
+LTLVV4KP key opening key: 268418
+LTLVV4KP generates round package
+LTLVV4KP adds ID LTLVV4KP to round package
+LTLVV4KP adds round 0 to round package
+LTLVV4KP adds key 1303765 to round package
+LTLVV4KP adds commit of crypted 53631 to round package
+LTLVV4KP adds commit of crypted 1202048 to round package
+LTLVV4KP adds commit of crypted 483453 to round package
+LTLVV4KP adds commit of crypted 815928 to round package
+LTLVV4KP adds commit of crypted 1029808 to round package
+LTLVV4KP adds commit of crypted 425535 to round package
+LTLVV4KP adds commit of crypted 760885 to round package
+LTLVV4KP adds commit of crypted 1293257 to round package
+LTLVV4KP adds commit of crypted 729403 to round package
+LTLVV4KP adds commit of crypted 347447 to round package
+LTLVV4KP adds commit of crypted 615530 to round package
+LTLVV4KP adds commit of crypted 575564 to round package
+LTLVV4KP adds commit of crypted 863326 to round package
+LTLVV4KP adds commit of crypted 742511 to round package
+LTLVV4KP adds commit of crypted 787226 to round package
+LTLVV4KP adds commit of crypted 1168329 to round package
+LTLVV4KP adds commit of crypted 694866 to round package
+LTLVV4KP adds commit of crypted 110746 to round package
+LTLVV4KP adds commit of crypted 826945 to round package
+LTLVV4KP adds commit of crypted 818228 to round package
+LTLVV4KP adds commit of crypted 1214715 to round package
+LTLVV4KP adds commit of crypted 967637 to round package
+LTLVV4KP adds commit of crypted 1106713 to round package
+LTLVV4KP adds commit of crypted 1108329 to round package
+LTLVV4KP adds commit of crypted 1088512 to round package
+LTLVV4KP send round package to service provider
+FWKTMF4A
+FWKTMF4A starts registration phase
+FWKTMF4A generates fresh tags
+FWKTMF4A tag: 161697
+FWKTMF4A tag: 202831
+FWKTMF4A tag: 68735
+FWKTMF4A tag: 1329355
+FWKTMF4A tag: 470778
+FWKTMF4A tag: 678614
+FWKTMF4A tag: 849986
+FWKTMF4A tag: 111095
+FWKTMF4A tag: 270065
+FWKTMF4A tag: 1163619
+FWKTMF4A tag: 721693
+FWKTMF4A tag: 250238
+FWKTMF4A tag: 782315
+FWKTMF4A tag: 682275
+FWKTMF4A tag: 103128
+FWKTMF4A tag: 1316124
+FWKTMF4A tag: 53277
+FWKTMF4A tag: 1067813
+FWKTMF4A tag: 363270
+FWKTMF4A tag: 72736
+FWKTMF4A tag: 509697
+FWKTMF4A tag: 1250428
+FWKTMF4A tag: 371718
+FWKTMF4A tag: 206544
+FWKTMF4A tag: 167175
+FWKTMF4A generates fresh keys
+FWKTMF4A key: 1054271
+FWKTMF4A generates opening keys for tags
+FWKTMF4A tag opening key: 316155
+FWKTMF4A tag opening key: 37070
+FWKTMF4A tag opening key: 237157
+FWKTMF4A tag opening key: 411540
+FWKTMF4A tag opening key: 1066615
+FWKTMF4A tag opening key: 774638
+FWKTMF4A tag opening key: 506991
+FWKTMF4A tag opening key: 1324473
+FWKTMF4A tag opening key: 424187
+FWKTMF4A tag opening key: 433953
+FWKTMF4A tag opening key: 697430
+FWKTMF4A tag opening key: 655244
+FWKTMF4A tag opening key: 1178857
+FWKTMF4A tag opening key: 1203020
+FWKTMF4A tag opening key: 530005
+FWKTMF4A tag opening key: 1160423
+FWKTMF4A tag opening key: 1312444
+FWKTMF4A tag opening key: 1194109
+FWKTMF4A tag opening key: 625179
+FWKTMF4A tag opening key: 1051417
+FWKTMF4A tag opening key: 763816
+FWKTMF4A tag opening key: 1219570
+FWKTMF4A tag opening key: 686367
+FWKTMF4A tag opening key: 381492
+FWKTMF4A tag opening key: 674703
+FWKTMF4A generate opening keys for keys
+FWKTMF4A key opening key: 295847
+FWKTMF4A generates round package
+FWKTMF4A adds ID FWKTMF4A to round package
+FWKTMF4A adds round 0 to round package
+FWKTMF4A adds key 1054271 to round package
+FWKTMF4A adds commit of crypted 161697 to round package
+FWKTMF4A adds commit of crypted 202831 to round package
+FWKTMF4A adds commit of crypted 68735 to round package
+FWKTMF4A adds commit of crypted 1329355 to round package
+FWKTMF4A adds commit of crypted 470778 to round package
+FWKTMF4A adds commit of crypted 678614 to round package
+FWKTMF4A adds commit of crypted 849986 to round package
+FWKTMF4A adds commit of crypted 111095 to round package
+FWKTMF4A adds commit of crypted 270065 to round package
+FWKTMF4A adds commit of crypted 1163619 to round package
+FWKTMF4A adds commit of crypted 721693 to round package
+FWKTMF4A adds commit of crypted 250238 to round package
+FWKTMF4A adds commit of crypted 782315 to round package
+FWKTMF4A adds commit of crypted 682275 to round package
+FWKTMF4A adds commit of crypted 103128 to round package
+FWKTMF4A adds commit of crypted 1316124 to round package
+FWKTMF4A adds commit of crypted 53277 to round package
+FWKTMF4A adds commit of crypted 1067813 to round package
+FWKTMF4A adds commit of crypted 363270 to round package
+FWKTMF4A adds commit of crypted 72736 to round package
+FWKTMF4A adds commit of crypted 509697 to round package
+FWKTMF4A adds commit of crypted 1250428 to round package
+FWKTMF4A adds commit of crypted 371718 to round package
+FWKTMF4A adds commit of crypted 206544 to round package
+FWKTMF4A adds commit of crypted 167175 to round package
+FWKTMF4A send round package to service provider
+ -- END REGISTRATION PHASE -- 
+ -- START DRIVING PHASE -- 
+A43MW5ET is driving. Tag 114884 (62, 11) - Wed Nov 09 19:57:55 UTC 2016
+II95C795 is driving. Tag 1223621 (146, 54) - Wed Nov 09 19:57:55 UTC 2016
+II95C795 is driving. Tag 165740 (7, 23) - Wed Nov 09 19:57:55 UTC 2016
+ASBFBCUU is driving. Tag 1042931 (43, 88) - Wed Nov 09 19:57:55 UTC 2016
+ASBFBCUU is driving. Tag 731774 (97, 52) - Wed Nov 09 19:57:55 UTC 2016
+ASBFBCUU is driving. Tag 953190 (52, 10) - Wed Nov 09 19:57:55 UTC 2016
+ASBFBCUU is driving. Tag 649698 (3, 13) - Wed Nov 09 19:57:55 UTC 2016
+ASBFBCUU is driving. Tag 731774 (113, 16) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 1029808 (1, 28) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 575564 (35, 71) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 1029808 (35, 66) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 815928 (107, 43) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 1108329 (121, 11) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 967637 (127, 18) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 863326 (154, 73) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 815928 (8, 41) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 787226 (103, 44) - Wed Nov 09 19:57:55 UTC 2016
+LTLVV4KP is driving. Tag 694866 (173, 50) - Wed Nov 09 19:57:55 UTC 2016
+FWKTMF4A is driving. Tag 721693 (80, 57) - Wed Nov 09 19:57:55 UTC 2016
+FWKTMF4A is driving. Tag 678614 (51, 79) - Wed Nov 09 19:57:55 UTC 2016
+FWKTMF4A is driving. Tag 270065 (176, 24) - Wed Nov 09 19:57:55 UTC 2016
+ -- END DRIVING PHASE -- 
+ -- START RECONCILIATION PHASE -- 
+ -- END RECONCILIATION PHASE -- 
