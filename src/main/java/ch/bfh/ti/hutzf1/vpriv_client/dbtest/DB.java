@@ -50,6 +50,9 @@ public class DB {
     }
     
     public void query(String query) throws SQLException {
+        connection.
+        
+        
         // Create and execute an SQL statement that returns some data.  
         Statement stmt = connection.createStatement();  
         stmt.executeQuery(query);  

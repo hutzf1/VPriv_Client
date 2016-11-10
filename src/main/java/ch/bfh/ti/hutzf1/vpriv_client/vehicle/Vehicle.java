@@ -82,13 +82,9 @@ public final class Vehicle {
         return buf.toString();
     }
     
-    public BigInteger getRandomTag() {
+    private BigInteger getRandomTag() {
         Random rand = new Random();
         return TAGS.get(rand.nextInt(this.n));
-    }
-    
-    public BigInteger getKey(int round) {
-        return KEYS.get(round);
     }
 
     private void registration() throws IOException, NoSuchAlgorithmException, InvalidKeyException {
@@ -145,7 +141,6 @@ public final class Vehicle {
         log.file(ID + " adds key " + KEYS.get(i) + " to round package");
         
         for(int x = 0; x < this.n; x++) {
-            // ENCRYPTION MISSING HERE!!!
             int index = x * i + i;
             System.out.println((TAGS.get(x)).toString());
             System.out.println(hash.getHash(TAGS.get(x), DK.get(i)).toString());
@@ -174,21 +169,24 @@ public final class Vehicle {
         log.both(ID + " is driving. Tag " + randomTag.toString() + " (" + currentLocation.LATIDUDE + ", " + currentLocation.LONGITUDE + ") - " + timestamp);
     }
 
-    public void reconciliation() throws IOException {
-        int c = 0;
+    public void reconciliation() throws IOException, NoSuchAlgorithmException, InvalidKeyException {
+        int cost = 0;
         int bi;
-        Element Di = ps.getOpeningKey();
+        BigInteger Di = ps.getOpeningKey().convertToBigInteger();
         
         JSONObject W = de.getAllData();
         JSONObject costData = new JSONObject();
+        JSONObject permutatedPackage = new JSONObject();
         
-        /*log.file(ID + " is calculating cost...");
-        for (int i = 0; i < W.length(); i++) {
-            if(TAGS.contains(W.names().getInt(i)))
-                c += W.names().getInt(i);
+        log.file(ID + " is calculating cost...");
+        for (int x = 0; x < W.length(); x++) {
+            if(TAGS.contains(W.names().getInt(x)))
+                cost += W.names().getInt(x);
         }
         
-        log.both(ID + " calculated " + c);
+        log.both(ID + " calculated " + cost);
+        
+        /*
         costData.put("type", "costdata");
         costData.put("id", ID);
         costData.put("cost", c);
@@ -197,6 +195,7 @@ public final class Vehicle {
         
         // Send permutated data to service provider
         // Permute todo!
+        */
         
         // Opening Keys for Costs
         log.file(ID + " generates opening keys for costs");
@@ -207,24 +206,27 @@ public final class Vehicle {
                 DC.add(ps.getOpeningKey().convertToBigInteger());
                 log.file(ID + " tag opening key: " + DC.get(index).toString());
             }
-        }*/
-        
-        /*
-        log.file(ID + " is permutating W and send the package to service provider");
-        int m = 0;
-        Ui.setId(ID);
-        for (DrivingTuple dr : W) {
-            Ui.addDrivingTuple(new DrivingTuple(hash.getHash(dr.tag, KEYS.get(i)), ps.commit(dr.cost, DC.get(m))));
-            m++; 
         }
-        sp.putPermutatedPackage(Ui);
         
-        bi = sp.getCheckMethod();
-        */
+        log.file(ID + " is permutating W and send the package to service provider");
+        permutatedPackage.put("id", ID);
+        permutatedPackage.put("U", i);
+        BigInteger w;
+        BigInteger c;
+        
+        for (int x = 1; x <= W.length()/2; x++) {
+            w = W.getBigInteger("w" + x);
+            c = W.getBigInteger("c" + x);
+            permutatedPackage.put("w" + x, hash.getHash(w, KEYS.get(i)));
+            permutatedPackage.put("c" + x, ps.commit(ps.getElement(c), ps.getElement(DC.get(x-1))).convertToBigInteger());
+        }
+        
+        de.putPermutatedPackage(permutatedPackage);
+        
         bi = (int) de.getControlMethod().get("bi");
-        /*
-        
+
         log.both(ID + " bi is: " + Integer.toString(bi)); 
+        /*
         
         // Vehicle sends to Service Provider
         if(bi == 0){
