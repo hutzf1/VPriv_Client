@@ -19,7 +19,7 @@ public class NewMain {
     public static void main(String[] args) throws SQLException {
         DB db = new DB();
         db.connect();
-        db.query("INSERT INTO Vehicles VALUES (N'38272739')");
+        db.execute("INSERT INTO Vehicles VALUES (N'38272739')");
         db.disconnect();
     }
     

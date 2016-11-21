@@ -85,11 +85,11 @@ public class DataExchange {
         put(jo, new URL(URL + "/putCostData"));
     }
     
-    public void putPermutatedPackage(JSONObject jo) throws MalformedURLException, IOException {
-        put(jo, new URL(URL + "/putPermutatedPackage"));
+    public void putPermutedPackage(JSONObject jo) throws MalformedURLException, IOException {
+        put(jo, new URL(URL + "/putPermutedPackage"));
     }
     
-    public void putControlData(JSONObject jo) throws MalformedURLException, IOException {
-        put(jo, new URL(URL + "/putControlData"));
+    public void putControlData(JSONObject jo, int bi) throws MalformedURLException, IOException {
+        put(jo, new URL(URL + "/putControlData" + bi));
     }
 }

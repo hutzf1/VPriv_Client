@@ -1,0 +1,80 @@
+ -- START REGISTRATION PHASE -- 
+QE3A8CJS
+QE3A8CJS starts registration phase
+QE3A8CJS generates fresh tags
+QE3A8CJS tag: 1041347
+QE3A8CJS tag: 774418
+QE3A8CJS tag: 431293
+QE3A8CJS tag: 1191200
+QE3A8CJS tag: 1012774
+QE3A8CJS generates fresh keys
+QE3A8CJS key: 302163
+QE3A8CJS generates opening keys for tags
+QE3A8CJS tag opening key: 106552
+QE3A8CJS tag opening key: 1027496
+QE3A8CJS tag opening key: 766583
+QE3A8CJS tag opening key: 240207
+QE3A8CJS tag opening key: 35701
+QE3A8CJS generate opening keys for keys
+QE3A8CJS key opening key: 288855
+QE3A8CJS generates round package
+QE3A8CJS adds ID QE3A8CJS to round package
+QE3A8CJS adds round 0 to round package
+QE3A8CJS adds key 302163 to round package
+QE3A8CJS adds commit of crypted 1041347 to round package
+QE3A8CJS adds commit of crypted 774418 to round package
+QE3A8CJS adds commit of crypted 431293 to round package
+QE3A8CJS adds commit of crypted 1191200 to round package
+QE3A8CJS adds commit of crypted 1012774 to round package
+QE3A8CJS send round package to service provider
+ -- END REGISTRATION PHASE -- 
+ -- START DRIVING PHASE -- 
+QE3A8CJS is driving. Tag 431293 (125, 76) - Sun Nov 20 18:14:33 UTC 2016
+QE3A8CJS is driving. Tag 1191200 (145, 69) - Sun Nov 20 18:14:34 UTC 2016
+QE3A8CJS is driving. Tag 431293 (69, 11) - Sun Nov 20 18:14:34 UTC 2016
+QE3A8CJS is driving. Tag 1041347 (176, 77) - Sun Nov 20 18:14:34 UTC 2016
+ -- END DRIVING PHASE -- 
+ -- START RECONCILIATION PHASE -- 
+QE3A8CJS is calculating cost...
+TAG 1041347
+W 431293
+TAG 1041347
+W 1191200
+TAG 1041347
+W 431293
+TAG 774418
+W 431293
+TAG 774418
+W 1191200
+TAG 774418
+W 431293
+TAG 431293
+W 431293
+COST 0
+TAG 431293
+W 1191200
+TAG 431293
+W 431293
+COST 4
+TAG 1191200
+W 431293
+TAG 1191200
+W 1191200
+COST 9
+TAG 1191200
+W 431293
+TAG 1012774
+W 431293
+TAG 1012774
+W 1191200
+TAG 1012774
+W 431293
+QE3A8CJS calculated 13
+QE3A8CJS generates opening keys for costs
+QE3A8CJS tag opening key: 750412
+QE3A8CJS tag opening key: 245559
+QE3A8CJS tag opening key: 1328609
+QE3A8CJS tag opening key: 1292995
+QE3A8CJS is permutating W and send the package to service provider
+QE3A8CJS bi is: 1
+ -- END RECONCILIATION PHASE -- 

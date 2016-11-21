@@ -29,8 +29,8 @@ public class Main {
         OneWayFunction hash = new OneWayFunction();
 
         // Variables
-        int numberOfVehicles = 5;
-        int n = 25; // number of new tags
+        int numberOfVehicles = 1;
+        int n = 5; // number of new tags
         int s = 1; // number of new keys
         int maxToll = n;
         int round = 1;

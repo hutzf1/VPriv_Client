@@ -7,11 +7,6 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>ch.bfh.unicrypt</groupId>
-            <artifactId>unicrypt</artifactId>
-            <version>2.1</version>
-        </dependency>
-        <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20151123</version>
@@ -20,6 +15,11 @@
             <groupId>com.microsoft</groupId>
             <artifactId>sqljdbc42</artifactId>
             <version>4.2.6420.100</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.bfh.unicrypt</groupId>
+            <artifactId>unicrypt</artifactId>
+            <version>2.2</version>
         </dependency>
     </dependencies>
     <properties>

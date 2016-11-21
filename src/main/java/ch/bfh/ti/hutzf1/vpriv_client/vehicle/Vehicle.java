@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
@@ -155,6 +156,7 @@ public final class Vehicle {
     public void drive() throws IOException {
         Location currentLocation = new Location();
         Date timestamp = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
         BigInteger randomTag = this.getRandomTag();
         JSONObject drivingData = new JSONObject();
         
@@ -162,7 +164,7 @@ public final class Vehicle {
         drivingData.put("tag", randomTag);
         drivingData.put("longitude", currentLocation.LONGITUDE);
         drivingData.put("latitude", currentLocation.LATIDUDE);
-        drivingData.put("timestamp", timestamp);
+        drivingData.put("timestamp", ft.format(timestamp));
         
         de.putDrivingData(drivingData);
         
@@ -176,64 +178,78 @@ public final class Vehicle {
         
         JSONObject W = de.getAllData();
         JSONObject costData = new JSONObject();
-        JSONObject permutatedPackage = new JSONObject();
+        JSONObject permutedPackage = new JSONObject();
+        JSONObject reconPackage = new JSONObject();
         
-        log.file(ID + " is calculating cost...");
-        for (int x = 0; x < W.length(); x++) {
-            if(TAGS.contains(W.names().getInt(x)))
-                cost += W.names().getInt(x);
+        log.console(W.toString());
+        
+        log.both(ID + " is calculating cost...");
+        
+        for(int x = 0; x < n; x++) {
+            for(int y = 1; y < W.length()/2; y++){
+                log.both("TAG " + TAGS.get(x).toString());
+                log.both("W " + W.getBigInteger("w" + y).toString());
+                if(TAGS.get(x).equals(W.getBigInteger("w" + y))) {
+                    log.both("COST " + Integer.toString(W.getInt("c" + y)));
+                    cost += W.getInt("c" + y);
+                }
+            }
         }
         
         log.both(ID + " calculated " + cost);
         
-        /*
         costData.put("type", "costdata");
         costData.put("id", ID);
-        costData.put("cost", c);
+        costData.put("cost", cost);
 
         de.putCostData(costData);
         
         // Send permutated data to service provider
-        // Permute todo!
-        */
-        
         // Opening Keys for Costs
-        log.file(ID + " generates opening keys for costs");
+        log.both(ID + " generates opening keys for costs");
         
         for (int x = 0; x <= i; x++) {
-            for (int y = 0; y < W.length(); y++) {
+            for (int y = 0; y < W.length()/2; y++) {
                 int index = x * y + y;
                 DC.add(ps.getOpeningKey().convertToBigInteger());
-                log.file(ID + " tag opening key: " + DC.get(index).toString());
+                log.both(ID + " tag opening key: " + DC.get(index).toString());
             }
         }
         
-        log.file(ID + " is permutating W and send the package to service provider");
-        permutatedPackage.put("id", ID);
-        permutatedPackage.put("U", i);
+        log.both(ID + " is permutating W and send the package to service provider");
+        permutedPackage.put("id", ID);
+        permutedPackage.put("U", i);
         BigInteger w;
         BigInteger c;
         
         for (int x = 1; x <= W.length()/2; x++) {
             w = W.getBigInteger("w" + x);
             c = W.getBigInteger("c" + x);
-            permutatedPackage.put("w" + x, hash.getHash(w, KEYS.get(i)));
-            permutatedPackage.put("c" + x, ps.commit(ps.getElement(c), ps.getElement(DC.get(x-1))).convertToBigInteger());
+            permutedPackage.put("w" + x, hash.getHash(w, KEYS.get(i)));
+            permutedPackage.put("c" + x, ps.commit(ps.getElement(c), ps.getElement(DC.get(x-1))).convertToBigInteger());
         }
         
-        de.putPermutatedPackage(permutatedPackage);
+        de.putPermutedPackage(permutedPackage);
         
         bi = (int) de.getControlMethod().get("bi");
 
         log.both(ID + " bi is: " + Integer.toString(bi)); 
-        /*
         
         // Vehicle sends to Service Provider
+        reconPackage.put("id", ID);
         if(bi == 0){
-            log.both(ID + " service provider calculated " + sp.calculate0(ID, KEYS.get(i), DC));  
+            reconPackage.put("dki", KEYS.get(i));
+            for (int x = 1; x <= W.length()/2; x++) {
+                reconPackage.put("dci" + x, DC.get(x-1));
+            }
         }
         else if(bi == 1){
-            log.both(ID + " service provider calculated " + sp.calculate1(ID, DV, Di));
-        }*/
+            for (int x = 1; x <= DV.size(); x++) {
+                reconPackage.put("dvi" + x, DV.get(x-1));
+            }
+            reconPackage.put("Di", Di);
+        }
+        
+        de.putControlData(reconPackage, bi);
     }
 }
