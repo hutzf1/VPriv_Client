@@ -20,9 +20,7 @@ import java.math.BigInteger;
  */
 
 public class PedersenScheme {
-    private final CyclicGroup CYCLICGROUP = GStarModSafePrime.getInstance(2698727);
-    //BigInteger safePrime = new BigInteger("2698727");
-    //private final CyclicGroup CYCLICGROUP = GStarModSafePrime.getInstance(safePrime);
+    private final CyclicGroup CYCLICGROUP = GStarModSafePrime.getFirstInstance(256);
     private final PedersenCommitmentScheme COMMITMENTSCHEME = PedersenCommitmentScheme.getInstance(CYCLICGROUP);
     
     public Element getTag() {

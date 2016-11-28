@@ -40,10 +40,11 @@ public class HashTest {
         ByteArray hash = ha.getHashValue(baTag, baKey);
         log.console(hash.toString());
         
-        ByteArray hash2 = hash.extract(30, 2);
-        log.console(hash2.toString());
+        //ByteArray hash2 = hash.extract(30, 2);
+        //log.console(hash2.toString());
         
-        Element p = ps.getElement(hash2);
+        Element p = ps.getElement(hash);
+        //Element p = ps.getElement(hash2);
 
     }
     

@@ -30,11 +30,11 @@ public class Main {
 
         // Variables
         int numberOfVehicles = 1;
-        int n = 5; // number of new tags
-        int s = 1; // number of new keys
+        int n = 25; // number of new tags
+        int s = 2; // number of new keys
         int maxToll = n;
-        int round = 1;
-        int i = round-1; // round (i element of [1; s])
+        //int round = 1;
+        int i = 0; // round (i element of [1; s])
         Random rand = new Random();
         
         ////////////////////////
@@ -45,8 +45,8 @@ public class Main {
         
         // Generate Vehicles
         ArrayList<Vehicle> vehicles = new ArrayList<>();
-        for (int x = 0; i < numberOfVehicles; i++) {
-            Vehicle newVehicle = new Vehicle(ps, hash, log, n, s);
+        for (int x = 0; x < numberOfVehicles; x++) {
+            Vehicle newVehicle = new Vehicle(ps, hash, log, n, s, i);
             vehicles.add(newVehicle);
         }
         
@@ -60,12 +60,13 @@ public class Main {
         log.both(" -- START DRIVING PHASE -- ");
         
         for (Vehicle vehicle : vehicles) {
-            for(int y = 0; y < rand.nextInt(maxToll) + 1; y++) {
+            for(int y = 0; y < rand.nextInt(maxToll) + 5; y++) {
                 vehicle.drive();
             }
         }
         
         log.both(" -- END DRIVING PHASE -- ");
+        
 
         //////////////////////////
         // RECONCILIATION PHASE //

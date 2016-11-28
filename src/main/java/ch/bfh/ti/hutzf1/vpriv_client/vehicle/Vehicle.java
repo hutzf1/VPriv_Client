@@ -10,14 +10,15 @@ import ch.bfh.ti.hutzf1.vpriv_client.crypto.PedersenScheme;
 import ch.bfh.ti.hutzf1.vpriv_client.dataexchange.DataExchange;
 import ch.bfh.ti.hutzf1.vpriv_client.location.Location;
 import ch.bfh.ti.hutzf1.vpriv_client.log.Log;
-import ch.bfh.unicrypt.math.algebra.general.interfaces.Element;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 import org.json.JSONObject;
 
@@ -45,7 +46,7 @@ public final class Vehicle {
     private final Log log;
     private final DataExchange de;
 
-    public Vehicle(PedersenScheme ps, OneWayFunction hash, Log log, int n, int s) throws IOException, NoSuchAlgorithmException, InvalidKeyException {
+    public Vehicle(PedersenScheme ps, OneWayFunction hash, Log log, int n, int s, int i) throws IOException, NoSuchAlgorithmException, InvalidKeyException {
         
         this.ps = ps;
         this.hash = hash;
@@ -53,21 +54,21 @@ public final class Vehicle {
         this.de = new DataExchange();
         
         // Set vehicles license plate
-        ID = generateID();
+        this.ID = generateID();
         
         // Set parameter
-        i = 0;
+        this.i = i;
         this.n = n;
         this.s = s;
         
         // Set tags, keys, opening keys
-        TAGS = new ArrayList<>();
-        KEYS = new ArrayList<>();
-        DV = new ArrayList<>();
-        DK = new ArrayList<>();
-        DC = new ArrayList<>();
+        this.TAGS = new ArrayList<>();
+        this.KEYS = new ArrayList<>();
+        this.DV = new ArrayList<>();
+        this.DK = new ArrayList<>();
+        this.DC = new ArrayList<>();
         
-        log.file(ID);
+        this.log.file(this.ID);
         this.registration();
     }
     
@@ -85,72 +86,76 @@ public final class Vehicle {
     
     private BigInteger getRandomTag() {
         Random rand = new Random();
-        return TAGS.get(rand.nextInt(this.n));
+        return this.TAGS.get(rand.nextInt(this.n));
     }
 
     private void registration() throws IOException, NoSuchAlgorithmException, InvalidKeyException {
         // Start vehicle registration
-        log.both(ID + " starts registration phase");
+        this.log.both(this.ID + " starts registration phase.");
         
         // Generate Fresh Tags
-        log.file(ID + " generates fresh tags");
+        this.log.both(this.ID + " generates fresh tags.");
         
         for (int x = 0; x < this.n; x++) {
-            TAGS.add(ps.getTag().convertToBigInteger());
-            log.file(ID + " tag: " + TAGS.get(x).toString());
+            this.TAGS.add(this.ps.getTag().convertToBigInteger());
+            this.log.both(this.ID + " generates tag: " + this.TAGS.get(x).toString());
         }
         
         // Generate Fresh Keys
-        log.file(ID + " generates fresh keys");
+        this.log.both(this.ID + " generates fresh keys.");
         
         for (int x = 0; x < this.s; x++) {
-            KEYS.add(ps.getKey().convertToBigInteger());
-            log.file(ID + " key: " + KEYS.get(x).toString());
+            this.KEYS.add(this.ps.getKey().convertToBigInteger());
+            this.log.both(this.ID + " generates key: " + this.KEYS.get(x).toString());
         }
   
         // Generate Opening Keys for Tags
-        log.file(ID + " generates opening keys for tags");
+        this.log.both(this.ID + " generates opening keys for tags.");
         
         for (int x = 0; x < this.s; x++) {
-            for (int y = 0; y < n; y++) {
+            for (int y = 0; y < this.n; y++) {
                 int index = x * y + y;
-                DV.add(ps.getOpeningKey().convertToBigInteger());
-                log.file(ID + " tag opening key: " + DV.get(index).toString());
+                this.DV.add(this.ps.getOpeningKey().convertToBigInteger());
+                this.log.both(this.ID + " generates tag opening key: " + this.DV.get(index).toString());
             }
         }
         
         // Generate Opening Keys for Keys
-        log.file(ID + " generate opening keys for keys");
+        this.log.both(this.ID + " generates opening keys for keys.");
         
         for (int x = 0; x < this.s; x++) {
-            DK.add(ps.getOpeningKey().convertToBigInteger());
-            log.file(ID + " key opening key: "+ DK.get(x).toString());
+            this.DK.add(this.ps.getOpeningKey().convertToBigInteger());
+            this.log.both(this.ID + " generates key opening key: "+ this.DK.get(x).toString());
         }
         
         // Generate round package to send data to service provider
-        JSONObject roundPackage = new JSONObject();
-        roundPackage.put("type", "roundpackage");
-        log.file(ID + " generates round package");
-        
-        roundPackage.put("id", ID);
-        log.file(ID + " adds ID " + ID + " to round package");
-        
-        roundPackage.put("round", i);
-        log.file(ID + " adds round " + i + " to round package");
-        
-        roundPackage.put("key", ps.commit(ps.getElement(KEYS.get(i)), ps.getElement(DK.get(i))).convertToBigInteger());
-        log.file(ID + " adds key " + KEYS.get(i) + " to round package");
-        
-        for(int x = 0; x < this.n; x++) {
-            int index = x * i + i;
-            System.out.println((TAGS.get(x)).toString());
-            System.out.println(hash.getHash(TAGS.get(x), DK.get(i)).toString());
-            roundPackage.put("v" + x, ps.commit(ps.getElement(hash.getHash(TAGS.get(x), DK.get(i))), ps.getElement(DV.get(index))).convertToBigInteger());
-            log.file(ID + " adds commit of crypted " + TAGS.get(x).toString() + " to round package");
+        for (int x = 0; x <= this.i; x++) {
+            JSONObject roundPackage = new JSONObject();
+            
+            roundPackage.put("type", "roundpackage");
+            this.log.both(this.ID + " generates round package.");
+
+            roundPackage.put("id", this.ID);
+            this.log.both(this.ID + " adds ID " + this.ID + " to round package.");
+
+            roundPackage.put("round", x);
+            this.log.both(this.ID + " adds round " + x + " to round package.");
+            
+            roundPackage.put("key", this.ps.commit(this.ps.getElement(this.KEYS.get(x)), this.ps.getElement(this.DK.get(x))).convertToBigInteger());
+            this.log.both(this.ID + " adds key " + this.KEYS.get(x) + " to round package");
+            
+            for(int y = 0; y < this.n; y++) {
+                int index = y * x + x;
+                //System.out.println((TAGS.get(y)).toString());
+                //System.out.println(hash.getHash(TAGS.get(y), DK.get(x)).toString());
+                BigInteger v = this.ps.commit(this.ps.getElement(this.hash.getHash(this.TAGS.get(y), this.DK.get(x))), this.ps.getElement(this.DV.get(index))).convertToBigInteger();
+                roundPackage.put("v" + y, v);
+                this.log.both(this.ID + " adds commit of crypted " + this.TAGS.get(y).toString() + " to round package: " + v.toString());
+            }
+            
+            this.log.both(this.ID + " sends round package to service provider.");
+            this.de.putRoundPackage(roundPackage);   
         }
-        
-        log.file(ID + " send round package to service provider");
-        de.putRoundPackage(roundPackage);
     }
     
     public void drive() throws IOException {
@@ -166,75 +171,88 @@ public final class Vehicle {
         drivingData.put("latitude", currentLocation.LATIDUDE);
         drivingData.put("timestamp", ft.format(timestamp));
         
-        de.putDrivingData(drivingData);
+        this.de.putDrivingData(drivingData);
         
-        log.both(ID + " is driving. Tag " + randomTag.toString() + " (" + currentLocation.LATIDUDE + ", " + currentLocation.LONGITUDE + ") - " + timestamp);
+        this.log.both(this.ID + " is driving. Tag " + randomTag.toString() + " (" + currentLocation.LATIDUDE + ", " + currentLocation.LONGITUDE + ") - " + timestamp);
     }
 
     public void reconciliation() throws IOException, NoSuchAlgorithmException, InvalidKeyException {
         int cost = 0;
         int bi;
-        BigInteger Di = ps.getOpeningKey().convertToBigInteger();
+        int round = 0;
+        BigInteger Di = this.ps.getOpeningKey().convertToBigInteger();
         
-        JSONObject W = de.getAllData();
+        JSONObject W = this.de.getAllData();
         JSONObject costData = new JSONObject();
         JSONObject permutedPackage = new JSONObject();
         JSONObject reconPackage = new JSONObject();
         
-        log.console(W.toString());
+        this.log.console(W.toString());
         
-        log.both(ID + " is calculating cost...");
+        this.log.both(this.ID + " is calculating cost...");
         
-        for(int x = 0; x < n; x++) {
-            for(int y = 1; y < W.length()/2; y++){
-                log.both("TAG " + TAGS.get(x).toString());
-                log.both("W " + W.getBigInteger("w" + y).toString());
-                if(TAGS.get(x).equals(W.getBigInteger("w" + y))) {
+        for(int x = 0; x < this.n; x++) {
+            for(int y = 1; y <= W.length()/2; y++){
+                this.log.both("TAG " + this.TAGS.get(x).toString());
+                this.log.both("W " + W.getBigInteger("w" + y).toString());
+                if(this.TAGS.get(x).equals(W.getBigInteger("w" + y))) {
                     log.both("COST " + Integer.toString(W.getInt("c" + y)));
                     cost += W.getInt("c" + y);
                 }
             }
         }
-        
-        log.both(ID + " calculated " + cost);
+
+        this.log.both(this.ID + " calculated " + cost);
         
         costData.put("type", "costdata");
-        costData.put("id", ID);
+        costData.put("id", this.ID);
         costData.put("cost", cost);
 
-        de.putCostData(costData);
-        
+        this.de.putCostData(costData);
+
         // Send permutated data to service provider
         // Opening Keys for Costs
-        log.both(ID + " generates opening keys for costs");
+        this.log.both(this.ID + " generates opening keys for costs");
         
-        for (int x = 0; x <= i; x++) {
+        for (int x = 0; x <= this.i; x++) {
             for (int y = 0; y < W.length()/2; y++) {
                 int index = x * y + y;
-                DC.add(ps.getOpeningKey().convertToBigInteger());
-                log.both(ID + " tag opening key: " + DC.get(index).toString());
+                this.DC.add(ps.getOpeningKey().convertToBigInteger());
+                this.log.both(ID + " tag opening key: " + this.DC.get(index).toString());
             }
         }
         
-        log.both(ID + " is permutating W and send the package to service provider");
-        permutedPackage.put("id", ID);
-        permutedPackage.put("U", i);
+        this.log.both(this.ID + " is permutating W and send the package to service provider");
+        permutedPackage.put("id", this.ID);
+        permutedPackage.put("U", this.i);
         BigInteger w;
         BigInteger c;
         
-        for (int x = 1; x <= W.length()/2; x++) {
+        List<Integer> shuffle = new ArrayList<>();
+        for (int x = 1; x <= W.length() / 2; x++)
+        {
+            shuffle.add(x);
+        }
+        this.log.console(shuffle.toString());
+        Collections.shuffle(shuffle);
+        this.log.console(shuffle.toString());
+        
+        for (int x = 1; x <= W.length() / 2; x++) {
             w = W.getBigInteger("w" + x);
             c = W.getBigInteger("c" + x);
-            permutedPackage.put("w" + x, hash.getHash(w, KEYS.get(i)));
-            permutedPackage.put("c" + x, ps.commit(ps.getElement(c), ps.getElement(DC.get(x-1))).convertToBigInteger());
-        }
+            permutedPackage.put("w" + shuffle.get(x - 1), this.hash.getHash(w, this.KEYS.get(this.i)));
+            permutedPackage.put("c" + shuffle.get(x - 1), this.ps.commit(this.ps.getElement(c), this.ps.getElement(this.DC.get(x-1))).convertToBigInteger());
+        }  
         
-        de.putPermutedPackage(permutedPackage);
+        this.de.putPermutedPackage(permutedPackage);
         
-        bi = (int) de.getControlMethod().get("bi");
+        this.log.console(W.toString());
+        this.log.console(permutedPackage.toString());
+        
+        bi = this.de.getControlMethod().getInt("bi");
 
-        log.both(ID + " bi is: " + Integer.toString(bi)); 
-        
+        this.log.both(this.ID + " bi is: " + Integer.toString(bi)); 
+        /*
         // Vehicle sends to Service Provider
         reconPackage.put("id", ID);
         if(bi == 0){
@@ -250,6 +268,6 @@ public final class Vehicle {
             reconPackage.put("Di", Di);
         }
         
-        de.putControlData(reconPackage, bi);
+        de.putControlData(reconPackage, bi); */
     }
 }
