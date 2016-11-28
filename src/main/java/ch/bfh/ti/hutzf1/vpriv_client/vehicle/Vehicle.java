@@ -10,6 +10,7 @@ import ch.bfh.ti.hutzf1.vpriv_client.crypto.PedersenScheme;
 import ch.bfh.ti.hutzf1.vpriv_client.dataexchange.DataExchange;
 import ch.bfh.ti.hutzf1.vpriv_client.location.Location;
 import ch.bfh.ti.hutzf1.vpriv_client.log.Log;
+import ch.bfh.unicrypt.UniCryptException;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.InvalidKeyException;
@@ -46,7 +47,7 @@ public final class Vehicle {
     private final Log log;
     private final DataExchange de;
 
-    public Vehicle(PedersenScheme ps, OneWayFunction hash, Log log, int n, int s, int i) throws IOException, NoSuchAlgorithmException, InvalidKeyException {
+    public Vehicle(PedersenScheme ps, OneWayFunction hash, Log log, int n, int s, int i) throws IOException, NoSuchAlgorithmException, InvalidKeyException, UniCryptException {
         
         this.ps = ps;
         this.hash = hash;
@@ -89,7 +90,7 @@ public final class Vehicle {
         return this.TAGS.get(rand.nextInt(this.n));
     }
 
-    private void registration() throws IOException, NoSuchAlgorithmException, InvalidKeyException {
+    private void registration() throws IOException, NoSuchAlgorithmException, InvalidKeyException, UniCryptException {
         // Start vehicle registration
         this.log.both(this.ID + " starts registration phase.");
         
@@ -176,7 +177,7 @@ public final class Vehicle {
         this.log.both(this.ID + " is driving. Tag " + randomTag.toString() + " (" + currentLocation.LATIDUDE + ", " + currentLocation.LONGITUDE + ") - " + timestamp);
     }
 
-    public void reconciliation() throws IOException, NoSuchAlgorithmException, InvalidKeyException {
+    public void reconciliation() throws IOException, NoSuchAlgorithmException, InvalidKeyException, UniCryptException {
         int cost = 0;
         int bi;
         int round = 0;
