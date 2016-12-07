@@ -1,83 +1,76 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ch.bfh.ti.hutzf1.vpriv_client;
 
 import ch.bfh.ti.hutzf1.vpriv_client.crypto.OneWayFunction;
 import ch.bfh.ti.hutzf1.vpriv_client.crypto.PedersenScheme;
-import ch.bfh.ti.hutzf1.vpriv_client.vehicle.Vehicle;
+import ch.bfh.ti.hutzf1.vpriv_client.device.Device;
 import ch.bfh.ti.hutzf1.vpriv_client.log.Log;
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
  *
- * @author fh
+ * @author Fabian Hutzli
  */
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, NoSuchAlgorithmException, InvalidKeyException, InterruptedException {
+    /**
+     *
+     * @param args
+     */
+    
+    public static void main(String[] args) {
         
         PedersenScheme ps = new PedersenScheme();
         Log log = new Log();
         OneWayFunction hash = new OneWayFunction();
 
         // Variables
-        int numberOfVehicles = 1;
+        int numberOfDevices = 2;
         int n = 25; // number of new tags
-        int s = 2; // number of new keys
-        int maxToll = n;
-        //int round = 1;
-        int i = 0; // round (i element of [1; s])
+        int s = 5; // number of new round keys // number of rounds
+        int i = 1; // round (i element of [1; s])
         Random rand = new Random();
         
-        ////////////////////////
-        // REGISTRATION PHASE //
-        ////////////////////////
-        
+        // REGISTRATION PHASE
         log.both(" -- START REGISTRATION PHASE -- ");
         
         // Generate Vehicles
-        ArrayList<Vehicle> vehicles = new ArrayList<>();
-        for (int x = 0; x < numberOfVehicles; x++) {
-            Vehicle newVehicle = new Vehicle(ps, hash, log, n, s, i);
-            vehicles.add(newVehicle);
+        ArrayList<Device> devices = new ArrayList<>();
+        for (int x = 0; x < numberOfDevices; x++) {
+            Device newDevice = new Device(ps, hash, log, n, s, i);
+            devices.add(newDevice);
         }
         
         log.both(" -- END REGISTRATION PHASE -- ");
         
-        ///////////////////
-        // DRIVING PHASE //
-        ///////////////////
-        
-        Thread.sleep(3000);
+        // DRIVING PHASE
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            log.exception(ex);
+        }
         log.both(" -- START DRIVING PHASE -- ");
         
-        for (Vehicle vehicle : vehicles) {
-            for(int y = 0; y < rand.nextInt(maxToll) + 5; y++) {
-                vehicle.drive();
+        devices.forEach((device) -> {
+            for(int y = 0; y < rand.nextInt(n); y++) {
+                device.drive();
             }
-        }
+        });
         
         log.both(" -- END DRIVING PHASE -- ");
         
-
-        //////////////////////////
-        // RECONCILIATION PHASE //
-        //////////////////////////
-        
-        Thread.sleep(3000);
+        // RECONCILIATION PHASE
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            log.exception(ex);
+        }
         log.both(" -- START RECONCILIATION PHASE -- ");
         
-        for (Vehicle vehicle : vehicles) {
-            vehicle.reconciliation();         
-        }
+        devices.forEach((device) -> {
+            //device.reconciliation();
+        });
         
         log.both(" -- END RECONCILIATION PHASE -- ");
         log.close();

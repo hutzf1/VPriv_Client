@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package ch.bfh.ti.hutzf1.vpriv_client.dataexchange;
 
 import java.io.BufferedReader;
@@ -14,13 +8,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
 /**
  *
- * @author fh
+ * @author Fabian Hutzli
  */
 
 public class DataExchange {
@@ -46,50 +42,128 @@ public class DataExchange {
         }
     }
 
-    public JSONObject getAllData() throws MalformedURLException, IOException {
-        return get(new URL(URL + "/getAllData"));
+    /**
+     *
+     * @return
+     */
+    
+    public JSONObject getAllData() {
+        JSONObject jo = null;
+        try {
+            jo = get(new URL(URL + "/getAllData"));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return jo;
     }
     
-    public JSONObject getControlMethod() throws MalformedURLException, IOException {
-        return get(new URL(URL + "/getControlMethod")); 
+    /**
+     *
+     * @return
+     */
+    
+    public JSONObject getControlMethod() {
+        JSONObject jo = null;
+        try {
+            jo = get(new URL(URL + "/getControlMethod"));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return jo;
     }
     
-    private void put(JSONObject jo, URL url) throws MalformedURLException, IOException {
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection(); 
-        connection.setDoOutput(true); 
-        connection.setInstanceFollowRedirects(false); 
-        connection.setRequestMethod("PUT"); 
-        connection.setRequestProperty("Content-Type", "application/json");
-        
-        OutputStream os = connection.getOutputStream();
-        os.write(jo.toString().getBytes());
-        os.flush();
-        BufferedReader br = new BufferedReader(new InputStreamReader((connection.getInputStream())));
-
-        String output;
-        System.out.println("Output from Server .... \n");
-        while ((output = br.readLine()) != null) {
-            System.out.println(output);
-        }  
+    private void put(JSONObject jo, URL url) {
+        try {
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoOutput(true);
+            connection.setInstanceFollowRedirects(false);
+            connection.setRequestMethod("PUT");
+            connection.setRequestProperty("Content-Type", "application/json");
+            
+            OutputStream os = connection.getOutputStream();
+            os.write(jo.toString().getBytes());
+            os.flush();
+            BufferedReader br = new BufferedReader(new InputStreamReader((connection.getInputStream())));
+            
+            String output;
+            System.out.println("Output from Server .... \n");
+            while ((output = br.readLine()) != null) {
+                System.out.println(output);  
+            }
+        } catch (ProtocolException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public void putRoundPackage(JSONObject jo) throws MalformedURLException, IOException {
-        put(jo, new URL(URL + "/putRoundPackage"));
+    /**
+     *
+     * @param jo
+     */
+    
+    public void putRoundPackage(JSONObject jo) {
+        try {
+            put(jo, new URL(URL + "/putRoundPackage"));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public void putDrivingData(JSONObject jo) throws MalformedURLException, IOException {
-        put(jo, new URL(URL + "/putDrivingData")); 
+    /**
+     *
+     * @param jo
+     */
+    
+    public void putDrivingData(JSONObject jo) {
+        try {
+            put(jo, new URL(URL + "/putDrivingData"));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public void putCostData(JSONObject jo) throws MalformedURLException, IOException {
-        put(jo, new URL(URL + "/putCostData"));
+    /**
+     *
+     * @param jo
+     */
+    
+    public void putCostData(JSONObject jo) {
+        try {
+            put(jo, new URL(URL + "/putCostData"));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public void putPermutedPackage(JSONObject jo) throws MalformedURLException, IOException {
-        put(jo, new URL(URL + "/putPermutedPackage"));
+    /**
+     *
+     * @param jo
+     */
+    
+    public void putPermutedPackage(JSONObject jo) {
+        try {
+            put(jo, new URL(URL + "/putPermutedPackage"));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public void putControlData(JSONObject jo, int bi) throws MalformedURLException, IOException {
-        put(jo, new URL(URL + "/putControlData" + bi));
+    /**
+     *
+     * @param jo
+     * @param bi
+     */
+    
+    public void putControlData(JSONObject jo, int bi) {
+        try {
+            put(jo, new URL(URL + "/putControlData"));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

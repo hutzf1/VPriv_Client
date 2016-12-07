@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ch.bfh.ti.hutzf1.vpriv_client.log;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * @author fh
+ * @author Fabian Hutzli
  */
 
 public class Log {
@@ -22,30 +18,74 @@ public class Log {
     FileWriter fw = null;
     BufferedWriter bw = null;
     
-    public Log() throws FileNotFoundException, IOException {
+    /**
+     *
+     */
+    
+    public Log() {
         file = new File("log.txt");
-        fw = new FileWriter(file.getAbsoluteFile());
+        try {
+            fw = new FileWriter(file.getAbsoluteFile());
+        } catch (IOException ex) {
+            Logger.getLogger(Log.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         bw = new BufferedWriter(fw);
     }
+    
+    /**
+     *
+     * @param message
+     */
     
     public void console(String message) {
         System.out.println(message);
     }
     
-    public void file(String message) throws IOException {
-        bw.append(message);
-        bw.append("\r\n");
+    /**
+     *
+     * @param message
+     */
+    
+    public void file(String message) {
+        try {
+            bw.append(message);
+            bw.append("\r\n");
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
     }
     
-    public void both(String message) throws IOException {
+    /**
+     *
+     * @param message
+     */
+    
+    public void both(String message) {
+        this.file(message);
         System.out.println(message);
-        bw.append(message);
-        bw.append("\r\n");
     }
     
-    public void close() throws IOException {
-        bw.close();
-        fw.close();
+    /**
+     *
+     * @param ex
+     */
+    
+    public void exception(Throwable ex) {
+        this.both(ex.getMessage());
     }
     
+    /**
+     *
+     */
+    
+    public void close() {
+        try {
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
 }

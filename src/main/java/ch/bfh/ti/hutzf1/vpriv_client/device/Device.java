@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ch.bfh.ti.hutzf1.vpriv_client.vehicle;
+package ch.bfh.ti.hutzf1.vpriv_client.device;
 
 import ch.bfh.ti.hutzf1.vpriv_client.crypto.OneWayFunction;
 import ch.bfh.ti.hutzf1.vpriv_client.crypto.PedersenScheme;
 import ch.bfh.ti.hutzf1.vpriv_client.dataexchange.DataExchange;
 import ch.bfh.ti.hutzf1.vpriv_client.location.Location;
 import ch.bfh.ti.hutzf1.vpriv_client.log.Log;
-import ch.bfh.unicrypt.UniCryptException;
-import java.io.IOException;
 import java.math.BigInteger;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,10 +16,10 @@ import org.json.JSONObject;
 
 /**
  *
- * @author fh
+ * @author Fabian Hutzli
  */
 
-public final class Vehicle {
+public final class Device {
     
     private final String ID;
  
@@ -47,7 +38,17 @@ public final class Vehicle {
     private final Log log;
     private final DataExchange de;
 
-    public Vehicle(PedersenScheme ps, OneWayFunction hash, Log log, int n, int s, int i) throws IOException, NoSuchAlgorithmException, InvalidKeyException, UniCryptException {
+    /**
+     *
+     * @param ps
+     * @param hash
+     * @param log
+     * @param n
+     * @param s
+     * @param i
+     */
+    
+    public Device(PedersenScheme ps, OneWayFunction hash, Log log, int n, int s, int i) {
         
         this.ps = ps;
         this.hash = hash;
@@ -74,13 +75,16 @@ public final class Vehicle {
     }
     
     private String generateID() {
-        String chars = "ABCDEFGHIJKLMNOPQRSTUVW0123456789";
-        int length = 8;
+        String chars = "0123456789";
+        int length = 15;
         
         Random rand = new Random();
         StringBuilder buf = new StringBuilder();
         for (int x = 0; x < length; x++) {
             buf.append(chars.charAt(rand.nextInt(chars.length())));
+            if(x == 7 || x == 13){
+                buf.append("-");
+            }
         }
         return buf.toString();
     }
@@ -90,7 +94,7 @@ public final class Vehicle {
         return this.TAGS.get(rand.nextInt(this.n));
     }
 
-    private void registration() throws IOException, NoSuchAlgorithmException, InvalidKeyException, UniCryptException {
+    private void registration() {
         // Start vehicle registration
         this.log.both(this.ID + " starts registration phase.");
         
@@ -98,7 +102,7 @@ public final class Vehicle {
         this.log.both(this.ID + " generates fresh tags.");
         
         for (int x = 0; x < this.n; x++) {
-            this.TAGS.add(this.ps.getTag().convertToBigInteger());
+            this.TAGS.add(this.ps.getRandomElement());
             this.log.both(this.ID + " generates tag: " + this.TAGS.get(x).toString());
         }
         
@@ -106,7 +110,7 @@ public final class Vehicle {
         this.log.both(this.ID + " generates fresh keys.");
         
         for (int x = 0; x < this.s; x++) {
-            this.KEYS.add(this.ps.getKey().convertToBigInteger());
+            this.KEYS.add(this.ps.getRandomElement());
             this.log.both(this.ID + " generates key: " + this.KEYS.get(x).toString());
         }
   
@@ -116,7 +120,7 @@ public final class Vehicle {
         for (int x = 0; x < this.s; x++) {
             for (int y = 0; y < this.n; y++) {
                 int index = x * y + y;
-                this.DV.add(this.ps.getOpeningKey().convertToBigInteger());
+                this.DV.add(this.ps.getRandomElement());
                 this.log.both(this.ID + " generates tag opening key: " + this.DV.get(index).toString());
             }
         }
@@ -125,12 +129,12 @@ public final class Vehicle {
         this.log.both(this.ID + " generates opening keys for keys.");
         
         for (int x = 0; x < this.s; x++) {
-            this.DK.add(this.ps.getOpeningKey().convertToBigInteger());
+            this.DK.add(this.ps.getRandomElement());
             this.log.both(this.ID + " generates key opening key: "+ this.DK.get(x).toString());
         }
         
         // Generate round package to send data to service provider
-        for (int x = 0; x <= this.i; x++) {
+        for (int x = 0; x < this.i; x++) {
             JSONObject roundPackage = new JSONObject();
             
             roundPackage.put("type", "roundpackage");
@@ -142,14 +146,13 @@ public final class Vehicle {
             roundPackage.put("round", x);
             this.log.both(this.ID + " adds round " + x + " to round package.");
             
-            roundPackage.put("key", this.ps.commit(this.ps.getElement(this.KEYS.get(x)), this.ps.getElement(this.DK.get(x))).convertToBigInteger());
+            //roundPackage.put("key", this.ps.commit(ps.getElement(this.KEYS.get(x)), ps.getElement(this.DK.get(x))));
+            roundPackage.put("key", this.ps.commit(this.KEYS.get(x), this.DK.get(x)));
             this.log.both(this.ID + " adds key " + this.KEYS.get(x) + " to round package");
             
             for(int y = 0; y < this.n; y++) {
                 int index = y * x + x;
-                //System.out.println((TAGS.get(y)).toString());
-                //System.out.println(hash.getHash(TAGS.get(y), DK.get(x)).toString());
-                BigInteger v = this.ps.commit(this.ps.getElement(this.hash.getHash(this.TAGS.get(y), this.DK.get(x))), this.ps.getElement(this.DV.get(index))).convertToBigInteger();
+                BigInteger v = this.ps.commit(this.hash.getHash(this.TAGS.get(y), this.DK.get(x), ps), this.DV.get(index));
                 roundPackage.put("v" + y, v);
                 this.log.both(this.ID + " adds commit of crypted " + this.TAGS.get(y).toString() + " to round package: " + v.toString());
             }
@@ -159,7 +162,11 @@ public final class Vehicle {
         }
     }
     
-    public void drive() throws IOException {
+    /**
+     *
+     */
+    
+    public void drive() {
         Location currentLocation = new Location();
         Date timestamp = new Date();
         SimpleDateFormat ft = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
@@ -177,11 +184,15 @@ public final class Vehicle {
         this.log.both(this.ID + " is driving. Tag " + randomTag.toString() + " (" + currentLocation.LATIDUDE + ", " + currentLocation.LONGITUDE + ") - " + timestamp);
     }
 
-    public void reconciliation() throws IOException, NoSuchAlgorithmException, InvalidKeyException, UniCryptException {
+    /**
+     *
+     */
+    
+    public void reconciliation() {
         int cost = 0;
         int bi;
         int round = 0;
-        BigInteger Di = this.ps.getOpeningKey().convertToBigInteger();
+        BigInteger Di = this.ps.getRandomElement();
         
         JSONObject W = this.de.getAllData();
         JSONObject costData = new JSONObject();
@@ -215,10 +226,10 @@ public final class Vehicle {
         // Opening Keys for Costs
         this.log.both(this.ID + " generates opening keys for costs");
         
-        for (int x = 0; x <= this.i; x++) {
+        for (int x = 0; x < this.i; x++) {
             for (int y = 0; y < W.length()/2; y++) {
                 int index = x * y + y;
-                this.DC.add(ps.getOpeningKey().convertToBigInteger());
+                this.DC.add(ps.getRandomElement());
                 this.log.both(ID + " tag opening key: " + this.DC.get(index).toString());
             }
         }
@@ -241,8 +252,8 @@ public final class Vehicle {
         for (int x = 1; x <= W.length() / 2; x++) {
             w = W.getBigInteger("w" + x);
             c = W.getBigInteger("c" + x);
-            permutedPackage.put("w" + shuffle.get(x - 1), this.hash.getHash(w, this.KEYS.get(this.i)));
-            permutedPackage.put("c" + shuffle.get(x - 1), this.ps.commit(this.ps.getElement(c), this.ps.getElement(this.DC.get(x-1))).convertToBigInteger());
+            permutedPackage.put("w" + shuffle.get(x - 1), this.hash.getHash(w, this.KEYS.get(this.i - 1), ps));
+            permutedPackage.put("c" + shuffle.get(x - 1), this.ps.commit(c, this.DC.get(x-1)));
         }  
         
         this.de.putPermutedPackage(permutedPackage);
