@@ -1,5 +1,13 @@
+/*
+ * VPriv Client Server Simulator
+ * Copyright 2017 Fabian Hutzli
+ * Berner Fachhochschule
+ *
+ * All rights reserved.
+ */
 package ch.bfh.ti.hutzf1.vpriv_client.dataexchange;
 
+import ch.bfh.ti.hutzf1.vpriv_client.log.Log;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -10,18 +18,21 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.json.JSONObject;
 
 /**
- *
+ * Methods to Transfer Data between Client and Server
  * @author Fabian Hutzli
  */
 
 public class DataExchange {
     
     private final String URL = "http://localhost:8080/VPriv_Server/webresources/ServiceProvider";
+    private final Log LOG;
+    
+    public DataExchange(Log log) {
+        this.LOG = log;
+    }
     
     private JSONObject get(URL url) throws MalformedURLException, IOException {
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -52,9 +63,9 @@ public class DataExchange {
         try {
             jo = get(new URL(URL + "/getAllData"));
         } catch (MalformedURLException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         } catch (IOException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         }
         return jo;
     }
@@ -69,9 +80,9 @@ public class DataExchange {
         try {
             jo = get(new URL(URL + "/getControlMethod"));
         } catch (MalformedURLException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         } catch (IOException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         }
         return jo;
     }
@@ -95,9 +106,9 @@ public class DataExchange {
                 System.out.println(output);  
             }
         } catch (ProtocolException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         } catch (IOException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         }
     }
     
@@ -110,7 +121,7 @@ public class DataExchange {
         try {
             put(jo, new URL(URL + "/putRoundPackage"));
         } catch (MalformedURLException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         }
     }
     
@@ -123,7 +134,7 @@ public class DataExchange {
         try {
             put(jo, new URL(URL + "/putDrivingData"));
         } catch (MalformedURLException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         }
     }
     
@@ -136,7 +147,7 @@ public class DataExchange {
         try {
             put(jo, new URL(URL + "/putCostData"));
         } catch (MalformedURLException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         }
     }
     
@@ -149,7 +160,7 @@ public class DataExchange {
         try {
             put(jo, new URL(URL + "/putPermutedPackage"));
         } catch (MalformedURLException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         }
     }
     
@@ -161,9 +172,9 @@ public class DataExchange {
     
     public void putControlData(JSONObject jo, int bi) {
         try {
-            put(jo, new URL(URL + "/putControlData"));
+            put(jo, new URL(URL + "/putControlData" + bi));
         } catch (MalformedURLException ex) {
-            Logger.getLogger(DataExchange.class.getName()).log(Level.SEVERE, null, ex);
+            this.LOG.exception(ex);
         }
     }
 }

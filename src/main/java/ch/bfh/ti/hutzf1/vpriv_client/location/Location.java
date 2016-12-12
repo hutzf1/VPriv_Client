@@ -1,9 +1,16 @@
+/*
+ * VPriv Client Server Simulator
+ * Copyright 2017 Fabian Hutzli
+ * Berner Fachhochschule
+ *
+ * All rights reserved.
+ */
 package ch.bfh.ti.hutzf1.vpriv_client.location;
 
 import java.util.Random;
 
 /**
- *
+ * Location Tuple with Longitude and Latitude.
  * @author Fabian Hutzli
  */
 

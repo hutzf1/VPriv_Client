@@ -26,7 +26,7 @@ import org.json.JSONObject;
  * @author Fabian Hutzli
  */
 
-public final class Device {
+public final class ____Device_orig {
     
     private final String ID;
  
@@ -56,7 +56,7 @@ public final class Device {
      * @param i
      */
     
-    public Device(PedersenScheme ps, OneWayFunction hash, Log log, int n, int s, int i) {
+    public ____Device_orig(PedersenScheme ps, OneWayFunction hash, Log log, int n, int s, int i) {
         
         this.PS = ps;
         this.HASH = hash;
@@ -221,7 +221,10 @@ public final class Device {
         
         for(int x = 0; x < this.N; x++) {
             for(int y = 1; y <= W.length()/2; y++){
+                //this.LOG.both("TAG " + this.ALLTAGS.get(x).toString());
+                //this.LOG.both("W " + W.getBigInteger("w" + y).toString());
                 if(this.ALLTAGS.get(x).equals(W.getBigInteger("w" + y))) {
+                    //LOG.both("COST " + Integer.toString(W.getInt("c" + y)));
                     cost += W.getInt("c" + y);
                 }
             }
@@ -242,6 +245,7 @@ public final class Device {
         for (int x = 0; x < this.I; x++) {
             for (int y = 0; y < W.length()/2; y++) {
                 int index = x *(W.length()/2 - 1) + x + y;
+                //int index = x * y + y;
                 this.DC.add(PS.getRandomElement());
                 this.LOG.both(ID + " tag opening key: " + this.DC.get(index).toString());
             }
@@ -250,15 +254,36 @@ public final class Device {
         this.LOG.both(this.ID + " is permutating W and send the package to service provider");
         permutedPackage.put("id", this.ID);
         permutedPackage.put("U", this.I);
+        BigInteger w;
+        BigInteger c;
         
         for (int x = 1; x <= W.length() / 2; x++) {
-            this.LOG.console(W.getBigInteger("w" + x).toString());
-            this.LOG.console(this.KEYS.get(this.I - 1).toString());
             permutedPackage.put("w" + x, this.HASH.getHash(W.getBigInteger("w" + x), this.KEYS.get(this.I - 1)));
             permutedPackage.put("c" + x, this.PS.commit(W.getBigInteger("c" + x), this.DC.get(x-1)));
         }
         
+        /*
+        List<Integer> shuffle = new ArrayList<>();
+        for (int x = 1; x <= W.length() / 2; x++)
+        {
+            shuffle.add(x);
+        }
+        this.LOG.console(shuffle.toString());
+        Collections.shuffle(shuffle);
+        this.LOG.console(shuffle.toString());
+        
+        for (int x = 1; x <= W.length() / 2; x++) {
+            w = W.getBigInteger("w" + x);
+            c = W.getBigInteger("c" + x);
+            permutedPackage.put("w" + shuffle.get(x - 1), this.HASH.getHash(w, this.KEYS.get(this.I - 1)));
+            permutedPackage.put("c" + shuffle.get(x - 1), this.PS.commit(c, this.DC.get(x-1)));
+            //this.LOG.console("PERMUT KEY " + this.KEYS.get(this.I - 1).toString());
+        }*/
+        
         this.DE.putPermutedPackage(permutedPackage);
+        
+        //this.LOG.console(W.toString());
+        //this.LOG.console(permutedPackage.toString());
         
         bi = this.DE.getControlMethod().getInt("bi");
         
@@ -267,18 +292,15 @@ public final class Device {
         // Vehicle sends to Service Provider
         reconPackage.put("id", ID);
         if(bi == 0){
-            this.LOG.console(DK.get(this.I - 1).toString());
-            reconPackage.put("dki", DK.get(this.I - 1));
+            reconPackage.put("dki", KEYS.get(this.I));
             for (int x = 1; x <= W.length()/2; x++) {
-                this.LOG.console(DC.get(x-1).toString());
                 reconPackage.put("dci" + x, DC.get(x-1));
             }
         }
         else if(bi == 1){
-            for (int x = 1; x <= this.N; x++) {
-            //for (int x = 1; x <= DV.size(); x++) {
+            for (int x = 1; x <= DV.size(); x++) {
                 reconPackage.put("dvi" + x, DV.get(x-1));
-                this.LOG.console(DV.get(x-1).toString());
+                //this.LOG.console("reconpack put " + DV.get(x-1).toString());
             }
             reconPackage.put("Di", Di);
         }

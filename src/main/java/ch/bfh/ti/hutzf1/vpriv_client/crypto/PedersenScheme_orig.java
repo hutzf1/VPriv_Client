@@ -1,13 +1,5 @@
-/*
- * VPriv Client Server Simulator
- * Copyright 2017 Fabian Hutzli
- * Berner Fachhochschule
- *
- * All rights reserved.
- */
 package ch.bfh.ti.hutzf1.vpriv_client.crypto;
 
-import ch.bfh.ti.hutzf1.vpriv_client.log.Log;
 import ch.bfh.unicrypt.UniCryptException;
 import ch.bfh.unicrypt.crypto.schemes.commitment.classes.PedersenCommitmentScheme;
 import ch.bfh.unicrypt.helper.array.classes.ByteArray;
@@ -16,22 +8,17 @@ import ch.bfh.unicrypt.math.algebra.general.interfaces.CyclicGroup;
 import ch.bfh.unicrypt.math.algebra.general.interfaces.Element;
 import ch.bfh.unicrypt.math.algebra.multiplicative.classes.GStarModSafePrime;
 import java.math.BigInteger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
- * Commits and Decommits Values (Tags, Keys).
- * Converts BigInteger, HashValues and Elements.
+ *
  * @author Fabian Hutzli
  */
 
-public class PedersenScheme {
+public class PedersenScheme_orig {
     private final CyclicGroup CYCLICGROUP = GStarModSafePrime.getFirstInstance(256);
     private final PedersenCommitmentScheme COMMITMENTSCHEME = PedersenCommitmentScheme.getInstance(CYCLICGROUP);
-    private BigInteger counter = BigInteger.TEN;
-    private final Log LOG;
-
-    public PedersenScheme(Log log) {
-        this.LOG = log;
-    }
     
     /*public Element getRandomElement() {
         Element message = COMMITMENTSCHEME.getRandomizationSpace().getRandomElement();
@@ -44,8 +31,8 @@ public class PedersenScheme {
      */
     
     public BigInteger getRandomElement() {
-        counter = counter.add(BigInteger.ONE);
-        return counter;
+        Element message = COMMITMENTSCHEME.getRandomizationSpace().getRandomElement();
+        return message.convertToBigInteger();
     }
     
     /**
@@ -69,7 +56,7 @@ public class PedersenScheme {
         try {        
             bArray = COMMITMENTSCHEME.getMessageSpace().getElementFrom(value);
         } catch (UniCryptException ex) {
-            this.LOG.exception(ex);
+            Logger.getLogger(PedersenScheme_orig.class.getName()).log(Level.SEVERE, null, ex);
         }
         return bArray;
     }
@@ -82,9 +69,8 @@ public class PedersenScheme {
      */
     
     public BigInteger commit(BigInteger message, BigInteger key) {
-        //Element commitment = COMMITMENTSCHEME.commit(this.getElement(message), this.getElement(key));
-        //return commitment.convertToBigInteger();
-        return message.add(new BigInteger("10" + key.toString()));
+        Element commitment = COMMITMENTSCHEME.commit(this.getElement(message), this.getElement(key));
+        return commitment.convertToBigInteger();
     }
     
     /*public Element commit(Element message, Element key) {
@@ -103,12 +89,6 @@ public class PedersenScheme {
     public Boolean decommit(BigInteger message, BigInteger key, BigInteger commitment) {
         BooleanElement result = COMMITMENTSCHEME.decommit(this.getElement(message), this.getElement(key), this.getElement(commitment));
         return result.getValue();
-    } 
-    
-    public BigInteger decommit(BigInteger message, BigInteger key) {
-        //BooleanElement result = COMMITMENTSCHEME.decommit(this.getElement(message), this.getElement(key), this.getElement(commitment));
-        //return result.getValue();
-        return message.add(new BigInteger("-10" + key.toString()));
     } 
     
     /*public Boolean decommit(Element message, Element key, Element commitment) {

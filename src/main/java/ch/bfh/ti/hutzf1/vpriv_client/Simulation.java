@@ -1,3 +1,10 @@
+/*
+ * VPriv Client Server Simulator
+ * Copyright 2017 Fabian Hutzli
+ * Berner Fachhochschule
+ *
+ * All rights reserved.
+ */
 package ch.bfh.ti.hutzf1.vpriv_client;
 
 import ch.bfh.ti.hutzf1.vpriv_client.crypto.OneWayFunction;
@@ -8,11 +15,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *
+ * Starts the Simulation from the Client side.
  * @author Fabian Hutzli
  */
 
-public class Main {
+public class Simulation {
 
     /**
      *
@@ -21,14 +28,14 @@ public class Main {
     
     public static void main(String[] args) {
         
-        PedersenScheme ps = new PedersenScheme();
         Log log = new Log();
-        OneWayFunction hash = new OneWayFunction();
+        PedersenScheme ps = new PedersenScheme(log);
+        OneWayFunction hash = new OneWayFunction(ps);
 
         // Variables
-        int numberOfDevices = 2;
-        int n = 25; // number of new tags
-        int s = 5; // number of new round keys // number of rounds
+        int numberOfDevices = 1;
+        int n = 5; // number of new tags
+        int s = 2; // number of new round keys // number of rounds
         int i = 1; // round (i element of [1; s])
         Random rand = new Random();
         
@@ -53,7 +60,8 @@ public class Main {
         log.both(" -- START DRIVING PHASE -- ");
         
         devices.forEach((device) -> {
-            for(int y = 0; y < rand.nextInt(n); y++) {
+            //for(int y = 0; y < rand.nextInt(n); y++) {
+            for(int y = 0; y < n; y++) {
                 device.drive();
             }
         });
@@ -69,7 +77,7 @@ public class Main {
         log.both(" -- START RECONCILIATION PHASE -- ");
         
         devices.forEach((device) -> {
-            //device.reconciliation();
+            device.reconciliation();
         });
         
         log.both(" -- END RECONCILIATION PHASE -- ");

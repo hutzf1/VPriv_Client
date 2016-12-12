@@ -1,0 +1,55 @@
+ -- START REGISTRATION PHASE -- 
+89095476-971066-6
+89095476-971066-6 starts registration phase.
+89095476-971066-6 generates fresh tags.
+89095476-971066-6 generates tag: 11
+89095476-971066-6 generates tag: 12
+89095476-971066-6 generates tag: 13
+89095476-971066-6 generates tag: 14
+89095476-971066-6 generates tag: 15
+89095476-971066-6 generates fresh keys.
+89095476-971066-6 generates key: 16
+89095476-971066-6 generates key: 17
+89095476-971066-6 generates opening keys for tags.
+89095476-971066-6 generates tag opening key: 18
+89095476-971066-6 generates tag opening key: 19
+89095476-971066-6 generates tag opening key: 20
+89095476-971066-6 generates tag opening key: 21
+89095476-971066-6 generates tag opening key: 22
+89095476-971066-6 generates tag opening key: 23
+89095476-971066-6 generates tag opening key: 24
+89095476-971066-6 generates tag opening key: 25
+89095476-971066-6 generates tag opening key: 26
+89095476-971066-6 generates tag opening key: 27
+89095476-971066-6 generates opening keys for keys.
+89095476-971066-6 generates key opening key: 28
+89095476-971066-6 generates key opening key: 29
+89095476-971066-6 adds ID 89095476-971066-6 to round package.
+89095476-971066-6 adds round 0 to round package.
+89095476-971066-6 adds key 16 to round package
+89095476-971066-6 adds commit of crypted 11 to round package: 6045
+89095476-971066-6 adds commit of crypted 12 to round package: 6047
+89095476-971066-6 adds commit of crypted 13 to round package: 6049
+89095476-971066-6 adds commit of crypted 14 to round package: 6051
+89095476-971066-6 adds commit of crypted 15 to round package: 6053
+89095476-971066-6 sends round package to service provider.
+ -- END REGISTRATION PHASE -- 
+ -- START DRIVING PHASE -- 
+89095476-971066-6 is driving. Tag 13 (83, 48) - Mon Dec 12 15:12:50 UTC 2016
+89095476-971066-6 is driving. Tag 14 (65, 57) - Mon Dec 12 15:12:51 UTC 2016
+89095476-971066-6 is driving. Tag 11 (144, 80) - Mon Dec 12 15:12:51 UTC 2016
+89095476-971066-6 is driving. Tag 15 (52, 26) - Mon Dec 12 15:12:51 UTC 2016
+89095476-971066-6 is driving. Tag 12 (174, 53) - Mon Dec 12 15:12:52 UTC 2016
+ -- END DRIVING PHASE -- 
+ -- START RECONCILIATION PHASE -- 
+89095476-971066-6 is calculating cost...
+89095476-971066-6 calculated 26
+89095476-971066-6 generates opening keys for costs
+89095476-971066-6 tag opening key: 31
+89095476-971066-6 tag opening key: 32
+89095476-971066-6 tag opening key: 33
+89095476-971066-6 tag opening key: 34
+89095476-971066-6 tag opening key: 35
+89095476-971066-6 is permutating W and send the package to service provider
+89095476-971066-6 bi is: 0
+ -- END RECONCILIATION PHASE -- 

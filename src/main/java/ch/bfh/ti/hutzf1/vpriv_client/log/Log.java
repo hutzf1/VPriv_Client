@@ -1,3 +1,10 @@
+/*
+ * VPriv Client Server Simulator
+ * Copyright 2017 Fabian Hutzli
+ * Berner Fachhochschule
+ *
+ * All rights reserved.
+ */
 package ch.bfh.ti.hutzf1.vpriv_client.log;
 
 import java.io.BufferedWriter;
@@ -8,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Handles the Logs to Console, File or Exceptions
  * @author Fabian Hutzli
  */
 

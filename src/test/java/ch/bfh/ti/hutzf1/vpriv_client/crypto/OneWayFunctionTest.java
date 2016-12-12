@@ -1,54 +1,35 @@
+/*
+ * VPriv Client Server Simulator
+ * Copyright 2017 Fabian Hutzli
+ * Berner Fachhochschule
+ *
+ * All rights reserved.
+ */
 package ch.bfh.ti.hutzf1.vpriv_client.crypto;
 
+import ch.bfh.ti.hutzf1.vpriv_client.log.Log;
 import java.math.BigInteger;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Tests the "Hash" functionality
  * @author Fabian Hutzli
  */
 
 public class OneWayFunctionTest {
-    
-    public OneWayFunctionTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
-     * Test of getHash method, of class OneWayFunction.
+     * Tests the One Way Function -> getHash.
      */
     @Test
-    public void testGetHash() throws Exception {
-        System.out.println("Testing One Way Function to generate Hash");
-        BigInteger message = BigInteger.ONE;
-        BigInteger key = BigInteger.TEN;
-        PedersenScheme ps = new PedersenScheme();
-        OneWayFunction owf = new OneWayFunction();
-        BigInteger expResult = null;
-        BigInteger result = owf.getHash(message, key, ps);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testGetHash() {
+        BigInteger message = new BigInteger("123456789");
+        BigInteger key = new BigInteger("987654321");
+        PedersenScheme ps = new PedersenScheme(new Log());
+        OneWayFunction owf = new OneWayFunction(ps);
+        String expResult = "28948022309329048855892746252171976963317496166410141009864396001978282508222";
+        BigInteger result = owf.getHash(message, key);
+        assertEquals(expResult, result.toString());
     }
-    
 }
