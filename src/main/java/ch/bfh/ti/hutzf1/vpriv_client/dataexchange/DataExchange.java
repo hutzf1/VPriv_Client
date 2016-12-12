@@ -48,8 +48,10 @@ public class DataExchange {
             while ((read = inputStream.read(buf)) > 0) {
                 byteArrayOutputStream.write(buf, 0, read);
             }
-        String str = (new String(byteArrayOutputStream.toByteArray()));
-        return (new JSONObject(str));
+            String str = (new String(byteArrayOutputStream.toByteArray()));
+            return (new JSONObject(str));
+        //} catch() {
+
         }
     }
 
@@ -64,8 +66,10 @@ public class DataExchange {
             jo = get(new URL(URL + "/getAllData"));
         } catch (MalformedURLException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         } catch (IOException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         }
         return jo;
     }
@@ -81,8 +85,10 @@ public class DataExchange {
             jo = get(new URL(URL + "/getControlMethod"));
         } catch (MalformedURLException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         } catch (IOException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         }
         return jo;
     }
@@ -107,8 +113,10 @@ public class DataExchange {
             }
         } catch (ProtocolException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         } catch (IOException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         }
     }
     
@@ -122,6 +130,7 @@ public class DataExchange {
             put(jo, new URL(URL + "/putRoundPackage"));
         } catch (MalformedURLException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         }
     }
     
@@ -135,6 +144,7 @@ public class DataExchange {
             put(jo, new URL(URL + "/putDrivingData"));
         } catch (MalformedURLException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         }
     }
     
@@ -148,6 +158,7 @@ public class DataExchange {
             put(jo, new URL(URL + "/putCostData"));
         } catch (MalformedURLException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         }
     }
     
@@ -161,6 +172,7 @@ public class DataExchange {
             put(jo, new URL(URL + "/putPermutedPackage"));
         } catch (MalformedURLException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         }
     }
     
@@ -175,6 +187,7 @@ public class DataExchange {
             put(jo, new URL(URL + "/putControlData" + bi));
         } catch (MalformedURLException ex) {
             this.LOG.exception(ex);
+            System.exit(0);
         }
     }
 }

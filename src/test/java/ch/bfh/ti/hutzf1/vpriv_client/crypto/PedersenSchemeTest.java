@@ -22,11 +22,10 @@ import static org.junit.Assert.*;
 public class PedersenSchemeTest {
 
     /**
-     * Test of getRandomElement method, of class PedersenScheme.
+     * Tests if getRandomElement gives random Elements from Message Space.
      */
     @Test
     public void testRandomElement() {
-        System.out.println("Testing if getRandomElement gives random Elements in Message Space");
         PedersenScheme ps = new PedersenScheme(new Log());
         BigInteger value1 = ps.getRandomElement();
         BigInteger value2 = ps.getRandomElement();
@@ -34,39 +33,35 @@ public class PedersenSchemeTest {
     }
 
     /**
-     * Test of getElement method, of class PedersenScheme.
+     * Tests if converting a BigInteger to a Unicrypt Element works.
      */
     @Test
     public void testGetElement_BigInteger() {
-        System.out.println("Testing if getElement Method returns the correct Element of a BigInteger.");
         PedersenScheme ps = new PedersenScheme(new Log());
-        BigInteger bigInt = BigInteger.ONE;
+        BigInteger bigInt = BigInteger.TEN;
         Element element = ps.getElement(bigInt);
         assertEquals(bigInt, element.convertToBigInteger());
     }
 
     /**
-     * Test of getElement method, of class PedersenScheme.
+     * Tests if converting a ByteArray to a Unicrypt Element works.
      */
     @Test
     public void testGetElement_ByteArray() {
-        System.out.println("Testing if getElement Method returns the correct Element of a ByteArray.");
         PedersenScheme ps = new PedersenScheme(new Log()); 
-        ByteArray byteArr = ByteArray.getInstance("Test");
+        ByteArray byteArr = ByteArray.getInstance("This is a Test.");
         Element element = ps.getElement(byteArr);
         assertEquals(byteArr, element.convertToByteArray());
-        fail("Convert to Element from ByteArray isn't working as expected.");
     }
 
     /**
-     * Test of commit and decommit method, of class PedersenScheme.
+     * Tests if decommitment of commitment is the commitment.
      */
     @Test
     public void testCommitment() {
-        System.out.println("Testing if decommitment of commitment is commitment.");
         PedersenScheme ps = new PedersenScheme(new Log());
-        BigInteger message = BigInteger.ONE;
-        BigInteger key = BigInteger.ZERO;
+        BigInteger message = BigInteger.TEN;
+        BigInteger key = BigInteger.ONE;
         assertEquals(true, ps.decommit(message, key, ps.commit(message, key)));
     }
 }

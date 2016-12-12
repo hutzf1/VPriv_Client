@@ -37,7 +37,7 @@ public final class Device {
     private final ArrayList<BigInteger> DK;
     private final ArrayList<BigInteger> DC;
     
-    private final int I;
+    private int I;
     private final int N;
     private final int S;
     
@@ -105,6 +105,22 @@ public final class Device {
             index = TAGS.size() - 1;
         }
         return this.TAGS.remove(index);
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public int getRound() {
+        return this.I;
+    }
+    
+    /**
+     *
+     * @param i
+     */
+    public void setRound(int i) {
+        this.I = i;
     }
 
     private void registration() {
@@ -239,6 +255,12 @@ public final class Device {
         // Opening Keys for Costs
         this.LOG.both(this.ID + " generates opening keys for costs");
         
+        ///
+        ///
+        /// PERMUTATION / SHUFFLE TODO
+        ///
+        ///
+        
         for (int x = 0; x < this.I; x++) {
             for (int y = 0; y < W.length()/2; y++) {
                 int index = x *(W.length()/2 - 1) + x + y;
@@ -276,7 +298,6 @@ public final class Device {
         }
         else if(bi == 1){
             for (int x = 1; x <= this.N; x++) {
-            //for (int x = 1; x <= DV.size(); x++) {
                 reconPackage.put("dvi" + x, DV.get(x-1));
                 this.LOG.console(DV.get(x-1).toString());
             }

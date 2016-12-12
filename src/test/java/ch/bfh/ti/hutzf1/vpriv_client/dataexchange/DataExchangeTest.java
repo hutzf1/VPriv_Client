@@ -16,10 +16,10 @@ public class DataExchangeTest {
      */
     @Test
     public void testPutRoundPackage() {
-        System.out.println("putRoundPackage");
         JSONObject jo = null;
-        DataExchange instance = new DataExchange(new Log());
-        instance.putRoundPackage(jo);
+        jo.put("id", "This is a Test.");
+        DataExchange de = new DataExchange(new Log());
+        de.putRoundPackage(jo);
     }
     
     /**
@@ -27,12 +27,10 @@ public class DataExchangeTest {
      */
     @Test
     public void testPutDrivingData() {
-        System.out.println("putDrivingData");
         JSONObject jo = null;
-        DataExchange instance = new DataExchange(new Log());
-        instance.putDrivingData(jo);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        jo.put("id", "This is a Test.");
+        DataExchange de = new DataExchange(new Log());
+        de.putDrivingData(jo);
     }
     
     /**
@@ -51,12 +49,10 @@ public class DataExchangeTest {
      */
     @Test
     public void testPutCostData() {
-        System.out.println("putCostData");
         JSONObject jo = null;
+        jo.put("id", "This is a Test.");
         DataExchange de = new DataExchange(new Log());
         de.putCostData(jo);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
     /**
@@ -64,16 +60,14 @@ public class DataExchangeTest {
      */
     @Test
     public void testPutPermutedPackage() {
-        System.out.println("putPermutedPackage");
         JSONObject jo = null;
-        DataExchange instance = new DataExchange(new Log());
-        instance.putPermutedPackage(jo);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        jo.put("id", "This is a Test.");
+        DataExchange de = new DataExchange(new Log());
+        de.putPermutedPackage(jo);
     }
     
     /**
-     * This test checks if return of getControlMethod is 0 or 1
+     * Tests if return of getControlMethod is 0 or 1
      */
     @Test
     public void testGetControlMethod() {
@@ -87,13 +81,11 @@ public class DataExchangeTest {
      */
     @Test
     public void testPutControlData() {
-        System.out.println("putControlData");
         JSONObject jo = null;
-        int bi = 0;
-        DataExchange instance = new DataExchange(new Log());
-        instance.putControlData(jo, bi);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        jo.put("id", "This is a Test.");
+        DataExchange de = new DataExchange(new Log());
+        de.putControlData(jo, 0);
+        de.putControlData(jo, 1);
     }
     
 }

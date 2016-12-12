@@ -11,8 +11,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Handles the Logs to Console, File or Exceptions
@@ -34,7 +32,7 @@ public class Log {
         try {
             fw = new FileWriter(file.getAbsoluteFile());
         } catch (IOException ex) {
-            Logger.getLogger(Log.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
         
         bw = new BufferedWriter(fw);
@@ -58,10 +56,9 @@ public class Log {
         try {
             bw.append(message);
             bw.append("\r\n");
-        } catch (IOException e) {
-            System.out.println(e);
+        } catch (IOException ex) {
+            System.out.println(ex);
         }
-
     }
     
     /**

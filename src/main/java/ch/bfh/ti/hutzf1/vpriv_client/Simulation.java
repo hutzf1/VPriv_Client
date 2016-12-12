@@ -35,9 +35,9 @@ public class Simulation {
         // Variables
         int numberOfDevices = 1;
         int n = 5; // number of new tags
-        int s = 2; // number of new round keys // number of rounds
+        int s = 2; // number of new round keys (number of rounds)
         int i = 1; // round (i element of [1; s])
-        Random rand = new Random();
+        //Random rand = new Random();
         
         // REGISTRATION PHASE
         log.both(" -- START REGISTRATION PHASE -- ");
